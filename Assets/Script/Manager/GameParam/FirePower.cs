@@ -12,25 +12,36 @@ public class FirePower : MonoBehaviour
     public IReadOnlyReactiveProperty<float> fireProperty => fire;
 
     [SerializeField]
-    float firePowerUpInterval = 20;
+    float s_firePowerUpInterval = 20;
     [SerializeField]
     float fireIncreaseValue = 10;
 
     //一定間隔で火力アップ
     public async UniTask StartPowerUp(CancellationToken cancellationToken)
     {
+        
+        Debug.Log("火力アップ開始");
         while(true)
         {
-            await UniTask.Delay((int)firePowerUpInterval, cancellationToken: cancellationToken);
+            var ms_Interval = TranslateSecondToMs(s_firePowerUpInterval);
+            await UniTask.Delay(ms_Interval, cancellationToken: cancellationToken);
             IncreaseFirePower(fireIncreaseValue);
         }
     }
 
+    int TranslateSecondToMs(float second)   //秒をミリ秒に変換
+    {
+        var milliSecond = second * 1000;
+        return (int)milliSecond;
+    }
+
     void IncreaseFirePower(float increaseValue)
     {
+        Debug.Log("火力アップ");
         if (increaseValue <= 0)
             throw new ArgumentOutOfRangeException("引数は正の整数でなくてはいけません.");
         fire.Value += increaseValue;
+        Debug.Log("現在の火力:" + fire.Value);
     }
 
     void DecreaseFirePower(float decreaseValue)
