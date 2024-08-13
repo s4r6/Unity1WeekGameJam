@@ -9,8 +9,8 @@ public static class SceneDictionary
         [SceneType.Title] = "Title",
         [SceneType.Describe] = "Describe",
         [SceneType.Credit] = "Credit",
-        [SceneType.InGame] = "‘å¼Test",
-        [SceneType.Result] = "‘å¼_ƒV[ƒ“‘JˆÚTest"
+        [SceneType.InGame] = "Onishi_InGame",
+        [SceneType.Result] = "Onishi_Result"
     };
 }
 
