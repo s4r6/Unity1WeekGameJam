@@ -4,19 +4,52 @@ using UnityEngine;
 
 public class PancakeMaker : MonoBehaviour
 {
-    public float BakedDegree; //焼け具合
-    bool pancakeState = false; //焼けたとか焦げたとか
+    public GameObject Pancake;
+    public Transform parentTransform;
+    public float BakedDegree; //各パンケーキパーツの焼け具合
+    private int BakedCount; //きれいに焼けた数
+    private int BurntCount; //焦げた数
+    bool pancakeState = false; //パンケーキ全体が焼けたか焦げたか
 
     void Start(){
         BakedDegree = 0;
+        BakedCount = 0;
+        BurntCount = 0;
     }
 
     void Update(){
-        BakedDegree++;
-        Baked(BakedDegree);
-        if (pancakeState){
-            Burnt(BakedDegree);
+        if (Input.GetKeyDown(KeyCode.R)){
+            BakedDegree = 0;
         }
+        if (Input.GetKeyDown(KeyCode.H)){
+            BakedDegree = 50;
+        }
+        if (Input.GetKeyDown(KeyCode.M)){
+            BakedDegree = 100;
+        }
+
+        /*焼け焦げ確認*/
+        if (BakedCount == 10){
+            Destroy(Pancake);
+            pancakeState = true;
+        }
+        else if (BurntCount == 5){
+            Destroy(Pancake);
+            pancakeState = false;
+        }
+        // 100%焼き目がつく or 50%焦げるまで確認
+        else if (BakedCount < 10 || BurntCount < 5){
+            if (Baked(BakedDegree) == 0){
+                BakedCount++;
+            }
+            if (Burnt(BakedDegree) == 0){
+                BurntCount++;
+            }
+        }
+    }
+
+    void PancakeMake(){
+        Instantiate(Pancake, parentTransform);
     }
 
     /**
@@ -26,13 +59,15 @@ public class PancakeMaker : MonoBehaviour
     *BakedDegree：焼け具合
     *
     *返値
-    *なし
+    *   0：焼けてる
+    *   負値：生焼け
     */
-    void Baked(float BakedDegree){
+    int Baked(float BakedDegree){
         if (BakedDegree >= 50){
             Debug.Log("焼けたぞ");
-            bool pancakeState = true;
+            return 0;
         }
+        return -1;
     }
 
     /**
@@ -42,12 +77,14 @@ public class PancakeMaker : MonoBehaviour
     *BakedDegree:焼け具合
     *
     *返値
-    *なし
+    *   0：焦げた
+    *   負値:焦げてない(焼けてる)
     */
-    void Burnt(float BakedDegree){
+    int Burnt(float BakedDegree){
         if (BakedDegree >= 100){
             Debug.Log("焦げたぞ！");
-            bool pancakeState = false;
+            return 0;
         }
+        return -1;
     }
 }
