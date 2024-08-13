@@ -33,7 +33,7 @@ public class GameMaster : MonoBehaviour
 
     void Start()
     {
-        timer.OnStart();　//カウントアップスタート
+        timer.OnStart(); //カウントアップスタート
         firepower.StartPowerUp(this.GetCancellationTokenOnDestroy()).Forget();
         //パンケーキを作成
     }
