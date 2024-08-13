@@ -25,7 +25,9 @@ public class GameMaster : MonoBehaviour
                 //シーン遷移
                 Debug.Log("シーン遷移");
                 SceneManager.sceneLoaded += OnSceneTransition;
-                SceneManager.LoadScene("大西_シーン遷移Test");
+                SceneManager.LoadScene(
+                    SceneDictionary.TypeOfName[SceneType.Result]
+                    );
             }).AddTo(this);
     }
 
