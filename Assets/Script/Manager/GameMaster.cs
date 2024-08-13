@@ -3,44 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using Cysharp.Threading.Tasks;
-
+using UnityEngine.SceneManagement;
 public class GameMaster : MonoBehaviour
 {
     LifePoint lifePoint;
     Timer timer;
     FirePower firepower;
-
-
-
+    SuccessCount successCount;
 
     void Awake()
     {
         lifePoint = GetComponent<LifePoint>();
         timer = GetComponent<Timer>();
         firepower = GetComponent<FirePower>();
-
-        timer.timeProperty    //カウントダウンが0以下になったらシーン遷移
-            .Where(x => x <= 0)
-            .Subscribe(_ =>
-            {
-                OnSceneTransition();
-                //シーン遷移
-                Debug.Log("シーン遷移");
-            }).AddTo(this);
+        successCount = new SuccessCount();
 
         lifePoint.lifeProperty
-            .Where(x => x <= 0)
+            .Where(x => x <= 0) //体力が0になったら
             .Subscribe(_ =>
             {
-                OnSceneTransition();
-                Debug.Log("シーン遷移");
                 //シーン遷移
+                Debug.Log("シーン遷移");
+                SceneManager.sceneLoaded += OnSceneTransition;
+                SceneManager.LoadScene("大西_シーン遷移Test");
             }).AddTo(this);
     }
 
     void Start()
     {
-        timer.OnStart();　//カウントダウンスタート
+        timer.OnStart();　//カウントアップスタート
         firepower.StartPowerUp(this.GetCancellationTokenOnDestroy()).Forget();
         //パンケーキを作成
     }
@@ -48,16 +39,26 @@ public class GameMaster : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.O))    //デバッグ用"O"キーが押されるとダメージ
+        //デバッグ用
+        if (Input.GetKeyDown(KeyCode.O))    //"O"キーが押されると失敗
             PancakeComplete(false);
-        
-            
+        if (Input.GetKeyDown(KeyCode.I))    //"I"が押されると成功
+            PancakeComplete(true);
+
     }
 
     //シーン遷移時の後処理
-    void OnSceneTransition()
+    void OnSceneTransition(Scene next, LoadSceneMode mode)
     {
-        timer.OnStop();
+        timer.OnStop(); 
+
+
+        var resultMaster = GameObject.FindWithTag("Manager").GetComponent<ResultMaster>();  //resultManagerを取得
+
+        resultMaster.time = timer.timeProperty.Value;   //現在の時間を渡す
+        resultMaster.success = successCount.successProperty.Value;  //成功回数を渡す
+
+        SceneManager.sceneLoaded -= OnSceneTransition;
     }
 
     //falseなら焦げた(失敗),trueならきれいに焼けた(成功)
@@ -65,6 +66,9 @@ public class GameMaster : MonoBehaviour
     {
         if (!pancakeState)
             lifePoint.SubtractLife();
+        else
+            successCount.AddSuccessCount();
+
 
         //パンケーキ作成
         //トッピング作成
@@ -87,6 +91,11 @@ public class GameMaster : MonoBehaviour
     public IReadOnlyReactiveProperty<int> GetLifeProperty()
     {
         return lifePoint.lifeProperty;
+    }
+
+    public IReadOnlyReactiveProperty<int> GetSuccessProperty()
+    {
+        return successCount.successProperty;
     }
 
     //次のトッピングを公開(仮でstring型)
