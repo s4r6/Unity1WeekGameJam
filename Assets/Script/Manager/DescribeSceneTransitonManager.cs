@@ -9,4 +9,11 @@ public class DescribeSceneTransitonManager : MonoBehaviour
             SceneDictionary.TypeOfName[SceneType.InGame]
             );
     }
+
+    public void OnClickedBackButton()
+    {
+        SceneManager.LoadScene(
+            SceneDictionary.TypeOfName[SceneType.Title]
+            );
+    }
 }

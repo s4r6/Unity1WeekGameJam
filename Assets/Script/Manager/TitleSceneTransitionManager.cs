@@ -10,10 +10,10 @@ public class TitleSceneTransitionManager : MonoBehaviour
             );
     }
 
-    public void OnClickedHowToPlayButton()
+    public void OnClickedDescribeButton()
     {
         SceneManager.LoadScene(
-            SceneDictionary.TypeOfName[SceneType.HowToPlay]
+            SceneDictionary.TypeOfName[SceneType.Describe]
             );
     }
 
