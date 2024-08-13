@@ -23,6 +23,8 @@ public class ResultMaster : MonoBehaviour
 
     public void OnRetry()
     {
-        SceneManager.LoadScene("‘å¼Test");
+        SceneManager.LoadScene(
+            SceneDictionary.TypeOfName[SceneType.InGame]
+            );
     }
 }
