@@ -2,7 +2,7 @@ public enum SceneType
 {
     Unknown,
     Title,
-    HowToPlay,
+    Describe,
     Credit,
     InGame,
     Result

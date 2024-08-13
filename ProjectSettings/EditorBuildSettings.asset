@@ -15,12 +15,12 @@ EditorBuildSettings:
     path: "Assets/Scenes/\u5927\u897F/\u5927\u897F_\u30B7\u30FC\u30F3\u9077\u79FBTest.unity"
     guid: 9f671d104d322484a8d3f12f6abd1bfd
   - enabled: 1
-    path: "Assets/Scenes/\u5927\u897F/\u5927\u897F_Credit.unity"
-    guid: f0760d9aa2438fb4599f44ca93a0795c
+    path: Assets/Scenes/Title.unity
+    guid: 5b57d949bf914e54e9e26c383d1c7b94
   - enabled: 1
-    path: "Assets/Scenes/\u5927\u897F/\u5927\u897F_Describe.unity"
-    guid: f55b581ac5405b543b0c901d9d31aad7
+    path: Assets/Scenes/Describe.unity
+    guid: 1fc5b0ce830dc2349b302090a9f2edce
   - enabled: 1
-    path: "Assets/Scenes/\u5927\u897F/\u5927\u897F_Title.unity"
-    guid: 5277ffae65edca34caf90be5b9710675
+    path: Assets/Scenes/Credit.unity
+    guid: 5932cff1b8e94f14db337da0ccdbd25f
   m_configObjects: {}
