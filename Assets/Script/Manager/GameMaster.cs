@@ -23,7 +23,7 @@ public class GameMaster : MonoBehaviour
         lifePoint = GetComponent<LifePoint>();
         timer = GetComponent<Timer>();
         firepower = GetComponent<FirePower>();
-        successCount = new SuccessCount();
+        successCount = GetComponent<SuccessCount>();
 
         lifePoint.lifeProperty
             .Where(x => x <= 0) //‘Ì—Í‚ª0‚É‚È‚Á‚½‚ç

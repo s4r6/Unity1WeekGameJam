@@ -1,7 +1,8 @@
+using UnityEngine;
 using UniRx;
 using System;
 
-public class SuccessCount
+public class SuccessCount : MonoBehaviour
 {
     ReactiveProperty<int> success = new IntReactiveProperty(0);
     public IReadOnlyReactiveProperty<int> successProperty => success;
