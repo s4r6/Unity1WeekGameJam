@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1540048130906301712}
   - component: {fileID: 1540048130906301718}
   - component: {fileID: 1540048130906301713}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RWall
-  m_TagString: Untagged
+  m_TagString: Flyingpan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,9 +124,9 @@ GameObject:
   - component: {fileID: 1540048131459880926}
   - component: {fileID: 1540048131459880925}
   - component: {fileID: 1540048131459880914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FryingPan
-  m_TagString: Untagged
+  m_TagString: Flyingpan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -274,9 +274,9 @@ GameObject:
   - component: {fileID: 1540048131612448102}
   - component: {fileID: 1540048131612448100}
   - component: {fileID: 1540048131612448103}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LWall
-  m_TagString: Untagged
+  m_TagString: Flyingpan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -384,7 +384,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1540048132475187952}
   - component: {fileID: 1540048132475187953}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Stick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
