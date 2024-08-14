@@ -5,6 +5,7 @@ using UnityEngine;
 public class PancakeMaker : MonoBehaviour
 {
     public GameObject pancakePrefab; // パンケーキオブジェクトのプレハブ
+    private PancakeMaker _pancakeMaker;
     private GameMaster _gameMaster; // ゲームマスターの参照
 
     void Start(){
@@ -15,13 +16,9 @@ public class PancakeMaker : MonoBehaviour
         // パンケーキオブジェクトを生成、画面に表示
         GameObject pancake = Instantiate(pancakePrefab, transform.position, Quaternion.identity);
         
-        // パンケーキにPancakeMakerをセット
-        Pancake pancakeScript = pancake.GetComponent<PancakeMake>();
-        if (pancakeScript != null){
-            pancakeScript.SetPancakeMaker(this);
-
-            // 生成したパンケーキオブジェクトにGameMasterをセット
-            pancakeScript.SetGameMaster(_gameMaster);
+        // 生成したパンケーキオブジェクトにGameMasterをセット
+        if (_gameMaster != null){
+            pancake.SendMessage("SetGameMaster", _gameMaster, SendMessageOptions.DontRequireReceiver);
         }
     }
 
