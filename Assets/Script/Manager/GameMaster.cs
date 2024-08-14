@@ -8,6 +8,8 @@ public class GameMaster : MonoBehaviour
     [SerializeField]
     string gameMode = "Debug";  //Debug,Buildでモードを切り替える(Rankingに送信するかしないか決定)
 
+    [SerializeField][Tooltip("パンケーキメーカー")] private PancakeMaker _pancakeMaker;
+
     //Gameで使用する各パラメータ
     LifePoint lifePoint;
     Timer timer;
@@ -36,6 +38,7 @@ public class GameMaster : MonoBehaviour
                     SceneDictionary.TypeOfName[SceneType.Result]
                     );
             }).AddTo(this);
+        _pancakeMaker.PancakeMake();
     }
 
     void Start()
