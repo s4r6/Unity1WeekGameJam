@@ -1,15 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
+using Zenject;
 public class GameMaster : MonoBehaviour
 {
+    [SerializeField]
+    string gameMode = "Debug";  //Debug,Buildでモードを切り替える(Rankingに送信するかしないか決定)
+
+    //Gameで使用する各パラメータ
     LifePoint lifePoint;
     Timer timer;
     FirePower firepower;
     SuccessCount successCount;
+
+    //スコアを保存しておくデータベース(Ranking)
+    [Inject]
+    IRepositiory repository;
 
     void Awake()
     {
@@ -59,6 +66,9 @@ public class GameMaster : MonoBehaviour
 
         resultMaster.time = timer.timeProperty.Value;   //現在の時間を渡す
         resultMaster.success = successCount.successProperty.Value;  //成功回数を渡す
+
+        if(gameMode == "Build")
+            repository.SendTimeToDataStore(timer.timeProperty.Value);   //時間を送信
 
         SceneManager.sceneLoaded -= OnSceneTransition;
     }
