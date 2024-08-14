@@ -4,87 +4,37 @@ using UnityEngine;
 
 public class PancakeMaker : MonoBehaviour
 {
-    public GameObject Pancake;
-    public Transform parentTransform;
-    public float BakedDegree; //å„ãƒ‘ãƒ³ã‚±ãƒ¼ã‚­ãƒ‘ãƒ¼ãƒ„ã®ç„¼ã‘å…·åˆ
-    private int BakedCount; //ãã‚Œã„ã«ç„¼ã‘ãŸæ•°
-    private int BurntCount; //ç„¦ã’ãŸæ•°
-    bool pancakeState = false; //ãƒ‘ãƒ³ã‚±ãƒ¼ã‚­å…¨ä½“ãŒç„¼ã‘ãŸã‹ç„¦ã’ãŸã‹
+    public GameObject pancakePrefab; // ƒpƒ“ƒP[ƒLƒIƒuƒWƒFƒNƒg‚ÌƒvƒŒƒnƒu
+    private GameMaster _gameMaster; // ƒQ[ƒ€ƒ}ƒXƒ^[‚ÌQÆ
 
     void Start(){
-        BakedDegree = 0;
-        BakedCount = 0;
-        BurntCount = 0;
+        PancakeMake();
     }
 
-    void Update(){
-        if (Input.GetKeyDown(KeyCode.R)){
-            BakedDegree = 0;
-        }
-        if (Input.GetKeyDown(KeyCode.H)){
-            BakedDegree = 50;
-        }
-        if (Input.GetKeyDown(KeyCode.M)){
-            BakedDegree = 100;
-        }
+    public void PancakeMake(){
+        // ƒpƒ“ƒP[ƒLƒIƒuƒWƒFƒNƒg‚ğ¶¬A‰æ–Ê‚É•\¦
+        GameObject pancake = Instantiate(pancakePrefab, transform.position, Quaternion.identity);
+        pancake.GetComponent<Pancake>().SetPancakeMaker(this); // ƒpƒ“ƒP[ƒL‚ÉPancakeMaker‚ğƒZƒbƒg
+    }
 
-        /*ç„¼ã‘ç„¦ã’ç¢ºèª*/
-        if (BakedCount == 10){
-            Destroy(Pancake);
-            pancakeState = true;
-        }
-        else if (BurntCount == 5){
-            Destroy(Pancake);
-            pancakeState = false;
-        }
-        // 100%ç„¼ãç›®ãŒã¤ã or 50%ç„¦ã’ã‚‹ã¾ã§ç¢ºèª
-        else if (BakedCount < 10 || BurntCount < 5){
-            if (Baked(BakedDegree) == 0){
-                BakedCount++;
-            }
-            if (Burnt(BakedDegree) == 0){
-                BurntCount++;
-            }
+    public void SetGameMaster(GameMaster master){
+        _gameMaster = master;
+    }
+
+    // Ä‚«–ÚŠm”F
+    public void Baked(PancakePart part){
+        if(part.IsBaked()){
+            // ‘Sƒp[ƒc‚ÉÄ‚«–Ú‚ª•t‚¢‚Ä‚¢‚é‚©Šm”F‚µŸ‚Ìˆ—‚Ö
+            // •K—v‚É‰‚¶‚Ä‘S‘Ì‚ÌÄ‚¯ó‘Ô‚ğŠÇ—‚·‚éƒR[ƒh‚ğ’Ç‰Á
+            Debug.Log("baked");
         }
     }
 
-    void PancakeMake(){
-        Instantiate(Pancake, parentTransform);
-    }
-
-    /**
-    *ãƒ‘ãƒ¼ãƒ„ãŒï¼‘ã¤ç„¼ã‘ãŸã“ã¨ã‚’èªè­˜
-    *
-    *å¼•æ•°
-    *BakedDegreeï¼šç„¼ã‘å…·åˆ
-    *
-    *è¿”å€¤
-    *   0ï¼šç„¼ã‘ã¦ã‚‹
-    *   è² å€¤ï¼šç”Ÿç„¼ã‘
-    */
-    int Baked(float BakedDegree){
-        if (BakedDegree >= 50){
-            Debug.Log("ç„¼ã‘ãŸã");
-            return 0;
+    // Å‚°Šm”F
+    public void Burnt(PancakePart part){
+        if(part.IsBurnt()){
+            Debug.Log("burnt");
+            _gameMaster.ReduceLife(); // ƒQ[ƒ€ƒ}ƒXƒ^[‚Éƒ‰ƒCƒt‚ğŒ¸‚ç‚·w¦‚ğo‚·
         }
-        return -1;
-    }
-
-    /**
-    *ãƒ‘ãƒ¼ãƒ„ãŒï¼‘ã¤ç„¦ã’ãŸã“ã¨ã‚’èªè­˜
-    *
-    *å¼•æ•°
-    *BakedDegree:ç„¼ã‘å…·åˆ
-    *
-    *è¿”å€¤
-    *   0ï¼šç„¦ã’ãŸ
-    *   è² å€¤:ç„¦ã’ã¦ãªã„(ç„¼ã‘ã¦ã‚‹)
-    */
-    int Burnt(float BakedDegree){
-        if (BakedDegree >= 100){
-            Debug.Log("ç„¦ã’ãŸãï¼");
-            return 0;
-        }
-        return -1;
     }
 }
