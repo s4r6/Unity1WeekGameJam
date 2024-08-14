@@ -15,6 +15,14 @@ public class FirePower : MonoBehaviour
     float s_firePowerUpInterval = 20;
     [SerializeField]
     float fireIncreaseValue = 10;
+    [SerializeField]
+    float startFirePower;
+
+    private void Start()
+    {
+        fire.Value = startFirePower;
+
+    }
 
     //ˆê’èŠÔŠu‚Å‰Î—ÍƒAƒbƒv
     public async UniTask StartPowerUp(CancellationToken cancellationToken)
