@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7354068178974320745}
   - component: {fileID: 7354068178974320749}
   - component: {fileID: 7354068178974320748}
+  - component: {fileID: 5043432117641099751}
   m_Layer: 6
   m_Name: PancakeParts (0)
   m_TagString: Untagged
@@ -161,6 +162,20 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0.43304366, y: -0.29951242}
   m_DampingRatio: 1
   m_Frequency: 10
+--- !u!114 &5043432117641099751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354068178974320747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pancake: {fileID: 5879546975051637886}
+  _bakedDegree: 0
 --- !u!1 &7354068179011253866
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,6 +190,7 @@ GameObject:
   - component: {fileID: 7354068179011253864}
   - component: {fileID: 7354068179011253869}
   - component: {fileID: 7354068179011253868}
+  - component: {fileID: 7964065698181223352}
   - component: {fileID: 7354068179011253871}
   m_Layer: 6
   m_Name: PancakeParts (2)
@@ -323,6 +339,20 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: -1.1263179, y: -3.8677368}
   m_DampingRatio: 1
   m_Frequency: 4
+--- !u!114 &7964065698181223352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354068179011253866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pancake: {fileID: 5879546975051637886}
+  _bakedDegree: 0
 --- !u!255 &7354068179011253871
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -350,6 +380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7354068179017570745}
+  - component: {fileID: 5879546975051637886}
   m_Layer: 6
   m_Name: TestPancake
   m_TagString: Untagged
@@ -382,6 +413,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5879546975051637886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354068179017570744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e162ff852c68104f8082efa4faf1c39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pancakeParts:
+  - {fileID: 5043432117641099751}
+  - {fileID: 820276434720687726}
+  - {fileID: 7964065698181223352}
+  - {fileID: 119186448162458845}
+  - {fileID: 3370701537550438275}
+  - {fileID: 3992623197141955312}
+  - {fileID: 5541701433547782302}
+  - {fileID: 5139924405189763819}
+  - {fileID: 2014961324877883598}
+  - {fileID: 6321291174251870706}
 --- !u!1 &7354068179470415281
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +450,7 @@ GameObject:
   - component: {fileID: 7354068179470415243}
   - component: {fileID: 7354068179470415242}
   - component: {fileID: 7354068179470415285}
+  - component: {fileID: 6321291174251870706}
   m_Layer: 6
   m_Name: PancakeParts (9)
   m_TagString: Untagged
@@ -543,6 +598,20 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: -0.5298236, y: 0.16779958}
   m_DampingRatio: 1
   m_Frequency: 10
+--- !u!114 &6321291174251870706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354068179470415281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pancake: {fileID: 5879546975051637886}
+  _bakedDegree: 0
 --- !u!1 &7354068179481754552
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,6 +626,7 @@ GameObject:
   - component: {fileID: 7354068179481754546}
   - component: {fileID: 7354068179481754557}
   - component: {fileID: 7354068179481754556}
+  - component: {fileID: 3992623197141955312}
   m_Layer: 6
   m_Name: PancakeParts (5)
   m_TagString: Untagged
@@ -704,6 +774,20 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: -0.51206905, y: -0.087645285}
   m_DampingRatio: 1
   m_Frequency: 10
+--- !u!114 &3992623197141955312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354068179481754552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pancake: {fileID: 5879546975051637886}
+  _bakedDegree: 0
 --- !u!1 &7354068180111629763
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +802,7 @@ GameObject:
   - component: {fileID: 7354068180111629761}
   - component: {fileID: 7354068180111629765}
   - component: {fileID: 7354068180111629764}
+  - component: {fileID: 3370701537550438275}
   m_Layer: 6
   m_Name: PancakeParts (4)
   m_TagString: Untagged
@@ -865,6 +950,20 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0.46427622, y: 0.3157835}
   m_DampingRatio: 1
   m_Frequency: 10
+--- !u!114 &3370701537550438275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354068180111629763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pancake: {fileID: 5879546975051637886}
+  _bakedDegree: 0
 --- !u!1 &7354068180245092878
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +978,7 @@ GameObject:
   - component: {fileID: 7354068180245092876}
   - component: {fileID: 7354068180245092865}
   - component: {fileID: 7354068180245092864}
+  - component: {fileID: 119186448162458845}
   - component: {fileID: 7354068180245092867}
   m_Layer: 6
   m_Name: PancakeParts (3)
@@ -1027,6 +1127,20 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: -0.44034246, y: -1.9399302}
   m_DampingRatio: 1
   m_Frequency: 4
+--- !u!114 &119186448162458845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354068180245092878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pancake: {fileID: 5879546975051637886}
+  _bakedDegree: 0
 --- !u!255 &7354068180245092867
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -1059,6 +1173,7 @@ GameObject:
   - component: {fileID: 7354068180317860931}
   - component: {fileID: 7354068180317860932}
   - component: {fileID: 7354068180317860935}
+  - component: {fileID: 820276434720687726}
   - component: {fileID: 7354068180317860934}
   m_Layer: 6
   m_Name: PancakeParts (1)
@@ -1207,6 +1322,20 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0.03457967, y: -4.102106}
   m_DampingRatio: 1
   m_Frequency: 4
+--- !u!114 &820276434720687726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354068180317860941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pancake: {fileID: 5879546975051637886}
+  _bakedDegree: 0
 --- !u!255 &7354068180317860934
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -1239,6 +1368,7 @@ GameObject:
   - component: {fileID: 7354068180365582601}
   - component: {fileID: 7354068180365582600}
   - component: {fileID: 7354068180365582603}
+  - component: {fileID: 5139924405189763819}
   - component: {fileID: 7354068180365582602}
   m_Layer: 6
   m_Name: PancakeParts (7)
@@ -1387,6 +1517,20 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0.024430169, y: -2.0181851}
   m_DampingRatio: 1
   m_Frequency: 4
+--- !u!114 &5139924405189763819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354068180365582646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pancake: {fileID: 5879546975051637886}
+  _bakedDegree: 0
 --- !u!255 &7354068180365582602
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -1419,6 +1563,7 @@ GameObject:
   - component: {fileID: 7354068180381746461}
   - component: {fileID: 7354068180381746460}
   - component: {fileID: 7354068180381746463}
+  - component: {fileID: 5541701433547782302}
   - component: {fileID: 7354068180381746462}
   m_Layer: 6
   m_Name: PancakeParts (6)
@@ -1567,6 +1712,20 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0.0062388554, y: -2.0700138}
   m_DampingRatio: 1
   m_Frequency: 4
+--- !u!114 &5541701433547782302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354068180381746458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pancake: {fileID: 5879546975051637886}
+  _bakedDegree: 0
 --- !u!255 &7354068180381746462
 FixedJoint2D:
   m_ObjectHideFlags: 0
@@ -1599,6 +1758,7 @@ GameObject:
   - component: {fileID: 7354068180683815059}
   - component: {fileID: 7354068180683815058}
   - component: {fileID: 7354068180683815069}
+  - component: {fileID: 2014961324877883598}
   - component: {fileID: 7354068180683815068}
   m_Layer: 6
   m_Name: PancakeParts (8)
@@ -1747,6 +1907,20 @@ FixedJoint2D:
   m_ConnectedAnchor: {x: 0.6807166, y: -1.8124914}
   m_DampingRatio: 1
   m_Frequency: 4
+--- !u!114 &2014961324877883598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354068180683815064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pancake: {fileID: 5879546975051637886}
+  _bakedDegree: 0
 --- !u!255 &7354068180683815068
 FixedJoint2D:
   m_ObjectHideFlags: 0
