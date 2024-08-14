@@ -21,6 +21,6 @@ public class UnityRoomRepositiory : MonoBehaviour, IRepositiory
     void InitializeUnityRoomAPI()   //—v‹‚³‚ê‚½‚Æ‚«‚É‰‚ß‚ÄUntiyroomAPI‚ğ¶¬
     {
         var UnityRoomAPI = Instantiate(ranking);
-        UnityRoomAPI.GetComponent<UnityroomApiClient>().SetHmacKey(HmacKey);
+        //UnityRoomAPI.GetComponent<UnityroomApiClient>().SetHmacKey(HmacKey);
     }
 }
