@@ -10,6 +10,8 @@ public class GameMaster : MonoBehaviour
 
     [SerializeField][Tooltip("パンケーキメーカー")] private PancakeMaker _pancakeMaker;
 
+    [SerializeField][Tooltip("次に墜ちてくるトッピング")]　private ToppingList _nextTopping;
+
     //Gameで使用する各パラメータ
     LifePoint lifePoint;
     Timer timer;
@@ -38,7 +40,7 @@ public class GameMaster : MonoBehaviour
                     SceneDictionary.TypeOfName[SceneType.Result]
                     );
             }).AddTo(this);
-        _pancakeMaker.PancakeMake();
+
     }
 
     void Start()
@@ -46,6 +48,9 @@ public class GameMaster : MonoBehaviour
         timer.OnStart(); //カウントアップスタート
         firepower.StartPowerUp(this.GetCancellationTokenOnDestroy()).Forget();
         //パンケーキを作成
+        _pancakeMaker.PancakeMake();
+        //トッピングを抽選
+        _nextTopping = (ToppingList)Random.Range(1, 2);
     }
 
 
@@ -86,7 +91,9 @@ public class GameMaster : MonoBehaviour
 
 
         //パンケーキ作成
+        _pancakeMaker.PancakeMake();
         //トッピング作成
+        _nextTopping = (ToppingList)Random.Range(1, 2);
 
     }
 
