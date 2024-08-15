@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" addBOMForNewFiles="with BOM under Windows, with no BOM otherwise">
+    <file url="file://$PROJECT_DIR$/Assets/Script/Manager/GameMaster.cs" charset="windows-31j" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Manager/GameParam/LifePoint.cs" charset="Shift_JIS" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Manager/GameParam/SuccessCount.cs" charset="Shift_JIS" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Pancake/PancakeParts.cs" charset="Shift_JIS" />
+    <file url="file://$PROJECT_DIR$/Assets/Script/Player/FryingPan.cs" charset="Shift_JIS" />
+  </component>
+</project>
