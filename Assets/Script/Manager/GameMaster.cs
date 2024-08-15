@@ -10,7 +10,7 @@ public class GameMaster : MonoBehaviour
 
     [SerializeField][Tooltip("パンケーキメーカー")] private PancakeMaker _pancakeMaker;
 
-    [SerializeField][Tooltip("次に墜ちてくるトッピング")]　private ToppingList _nextTopping;
+    [SerializeField][Tooltip("次に墜ちてくるトッピング")] private ToppingList _nextTopping;
 
     //Gameで使用する各パラメータ
     LifePoint lifePoint;
