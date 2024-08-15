@@ -9,7 +9,6 @@ public class UnityRoomRepositiory : MonoBehaviour, IRepositiory
 
     public void SendTimeToDataStore(float time)
     {
-        UnityroomApiClient.Instance.SendScore(1, time, ScoreboardWriteMode.Always); //スコア送信
+        UnityroomApiClient.Instance.SendScore(1, time, ScoreboardWriteMode.Always); //繧ｹ繧ｳ繧｢騾∽ｿ｡
     }
-
 }
