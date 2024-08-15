@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum ToppingList
 {
+   none,
    blueberry,
    strawberry
 }

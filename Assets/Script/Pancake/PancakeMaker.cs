@@ -4,25 +4,18 @@ using UnityEngine;
 
 public class PancakeMaker : MonoBehaviour
 {
-    public GameObject pancakePrefab; // ƒpƒ“ƒP[ƒLƒIƒuƒWƒFƒNƒg‚ÌƒvƒŒƒnƒu
-    private PancakeMaker _pancakeMaker;
-    private GameMaster _gameMaster; // ƒQ[ƒ€ƒ}ƒXƒ^[‚ÌŽQÆ
+    public GameObject pancakePrefab; // ãƒ‘ãƒ³ã‚±ãƒ¼ã‚­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ãƒ—ãƒ¬ãƒãƒ–
+
+    //private PancakeMaker _pancakeMaker;
+    [SerializeField]private GameMaster _gameMaster; // ã‚²ãƒ¼ãƒ ãƒžã‚¹ã‚¿ãƒ¼ã®å‚ç…§
 
     void Start(){
-        PancakeMake();
+        //PancakeMake();
     }
 
     public void PancakeMake(){
-        // ƒpƒ“ƒP[ƒLƒIƒuƒWƒFƒNƒg‚ð¶¬A‰æ–Ê‚É•\Ž¦
+        // ãƒ‘ãƒ³ã‚±ãƒ¼ã‚­ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã€ç”»é¢ã«è¡¨ç¤º
         GameObject pancake = Instantiate(pancakePrefab, transform.position, Quaternion.identity);
-        
-        // ¶¬‚µ‚½ƒpƒ“ƒP[ƒLƒIƒuƒWƒFƒNƒg‚ÉGameMaster‚ðƒZƒbƒg
-        if (_gameMaster != null){
-            pancake.SendMessage("SetGameMaster", _gameMaster, SendMessageOptions.DontRequireReceiver);
-        }
-    }
-
-    public void SetGameMaster(GameMaster master){
-        _gameMaster = master;
+        pancake.GetComponent<Pancake>().SetGameMaster(_gameMaster);
     }
 }

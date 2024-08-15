@@ -49,8 +49,11 @@ public class PancakeParts : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "FlyingPan")
+        //Debug.Log("振れている");
+        //Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.tag == "Flyingpan")
         {
+            //Debug.Log(Time.deltaTime);
             _bakedDegree += _gameMaster.GetFire() * Time.deltaTime;//FixedUpdateなのでTime/Deltatimeは不要だけどこれがあるとフレーム換算しなくて済むので追加
         }
     }
