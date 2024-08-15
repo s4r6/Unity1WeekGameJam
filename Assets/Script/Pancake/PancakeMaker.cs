@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class PancakeMaker : MonoBehaviour
 {
-    public GameObject pancakePrefab; // �p���P�[�L�I�u�W�F�N�g�̃v���n�u
+    public GameObject pancakePrefab; // パンケーキオブジェクトのプレハブ
+
     //private PancakeMaker _pancakeMaker;
-    [SerializeField]private GameMaster _gameMaster; // �Q�[���}�X�^�[�̎Q��
+    [SerializeField]private GameMaster _gameMaster; // ゲームマスターの参照
 
     void Start(){
         //PancakeMake();
     }
 
     public void PancakeMake(){
-        // �p���P�[�L�I�u�W�F�N�g�𐶐��A��ʂɕ\��
+        // パンケーキオブジェクトを生成、画面に表示
         GameObject pancake = Instantiate(pancakePrefab, transform.position, Quaternion.identity);
-
         pancake.GetComponent<Pancake>().SetGameMaster(_gameMaster);
     }
 }
