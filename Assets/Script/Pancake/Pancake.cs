@@ -1,27 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class Pancake : MonoBehaviour
 {
     private GameMaster _gameMaster;
+
     [SerializeField] private List<PancakeParts> _pancakeParts;
     //[SerializeField] protected bool _debugMode;
     private int _bakedNum;
     private int _burntNum;
 
+    private bool InjectComplete = false;
 
-    // Start is called before the first frame update
-    void Start()
+    /*private void Start()
     {
-        foreach (var part in _pancakeParts) {
+        foreach (var part in _pancakeParts)
+        {
             part.SetgameMaster(_gameMaster);
         }
+
+        InjectComplete = true;
+    }*/
+
+    [Inject]
+    private void InjectGameMaster(GameMaster master)
+    {
+        _gameMaster = master;
+        foreach (var part in _pancakeParts)
+        {
+            part.SetgameMaster(_gameMaster);
+        }
+
+        InjectComplete = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!InjectComplete) return;
+
         if (_burntNum/_pancakeParts.Count >= 0.5) {
             Debug.Log("è≈Ç∞ÇƒÇµÇ‹Ç¡ÇΩ");
             _gameMaster.PancakeComplete(true);

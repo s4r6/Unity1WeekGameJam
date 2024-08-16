@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class PancakeParts : MonoBehaviour
 {
+    [SerializeField]
     private GameMaster _gameMaster;
     [SerializeField] private Pancake _pancake;
     [SerializeField] private float _bakedDegree;
     private bool _baked;
     private bool _burnt;
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
@@ -43,7 +37,8 @@ public class PancakeParts : MonoBehaviour
         }
     }
 
-    public void SetgameMaster(GameMaster gameMaster) { 
+    public void SetgameMaster(GameMaster gameMaster) {
+        Debug.Log(gameMaster);
         _gameMaster = gameMaster;
     }
 

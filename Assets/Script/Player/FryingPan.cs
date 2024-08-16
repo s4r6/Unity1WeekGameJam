@@ -12,10 +12,6 @@ public class FryingPan : MonoBehaviour
     private float _chargePower;
     [SerializeField][Tooltip("左右に動く最高速度です")] private Rigidbody2D _myRB2D;
     // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()
@@ -23,6 +19,7 @@ public class FryingPan : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && _maxPower > _chargePower)
         {
             _chargePower += _chargePowerSpeed * Time.deltaTime;
+            Debug.Log(_chargePower);
             if (_maxPower < _chargePower) { _chargePower = _maxPower; }
         }
         if (Input.GetKeyUp(KeyCode.Space))
@@ -30,15 +27,16 @@ public class FryingPan : MonoBehaviour
             _myRB2D.AddForce(new Vector2(0, _chargePower), ForceMode2D.Impulse);
             _chargePower = 0;
         }
+       
     }
 
     /// <summary>
     /// どれだけ力をためているかを返す
     /// </summary>
     /// <returns>1を100%としてチャージしている率を返す</returns>
-    public float GetPowerCharagePercent() { 
+    public float GetPowerCharagePercent() {
         float powerPercent = _chargePower / _maxPower;
-        if (_chargePower > 1) { _chargePower = 1; }
+        if (powerPercent > 1) { powerPercent = 1; }
         return powerPercent;
     }
 }

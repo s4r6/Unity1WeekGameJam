@@ -6,7 +6,7 @@ public class ToppingMaker : MonoBehaviour
 {
     public GameObject blueberryPrefab;
     public GameObject strawberryPrefab;
-    
+
     public void ToppingMake(ToppingList topping){
         GameObject toppingPrefab = null;
 
