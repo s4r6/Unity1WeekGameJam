@@ -10,7 +10,9 @@ public class GameMaster : MonoBehaviour
 
     [SerializeField][Tooltip("パンケーキメーカー")] private PancakeMaker _pancakeMaker;
 
-    [SerializeField][Tooltip("次に墜ちてくるトッピング")] private ToppingList _nextTopping;
+    //[SerializeField][Tooltip("次に墜ちてくるトッピング")] private ToppingList _nextTopping;
+    ReactiveProperty<ToppingList> nextTopping = new ReactiveProperty<ToppingList>();
+    IReadOnlyReactiveProperty<ToppingList> nextToppingProperty => nextTopping;
 
     //Gameで使用する各パラメータ
     LifePoint lifePoint;
@@ -20,7 +22,7 @@ public class GameMaster : MonoBehaviour
 
     //スコアを保存しておくデータベース(Ranking)
     [Inject]
-    IRepositiory repository;
+    IRepositiory repository; 
 
     void Awake()
     {
@@ -50,7 +52,7 @@ public class GameMaster : MonoBehaviour
         //パンケーキを作成
         _pancakeMaker.PancakeMake();
         //トッピングを抽選
-        _nextTopping = (ToppingList)Random.Range(1, 2);
+        nextTopping.Value = (ToppingList)Random.Range(1, 2);
     }
 
 
@@ -93,7 +95,7 @@ public class GameMaster : MonoBehaviour
         //パンケーキ作成
         _pancakeMaker.PancakeMake();
         //トッピング作成
-        _nextTopping = (ToppingList)Random.Range(1, 2);
+        nextTopping.Value = (ToppingList)Random.Range(1, 2);
 
     }
 
@@ -101,6 +103,12 @@ public class GameMaster : MonoBehaviour
     public float GetFire()
     {
         return firepower.fireProperty.Value;
+    }
+
+    //次のトッピングを公開
+    public IReadOnlyReactiveProperty<ToppingList> GetNextTopping()
+    {
+        return nextToppingProperty;
     }
 
     //時間のReactivePropertyを外部に公開
@@ -120,9 +128,5 @@ public class GameMaster : MonoBehaviour
         return successCount.successProperty;
     }
 
-    //次のトッピングを公開(仮でstring型)
-    public IReadOnlyReactiveProperty<string> GetNextTopping()
-    {
-        return default;
-    }
+
 }

@@ -10,7 +10,7 @@ public class ToppingPresenter : MonoBehaviour
     
     void Start()
     {
-        gameMaster.GetNextTopping().Subscribe(toppingViewer.SetNextToppingImage).AddTo(this);
+        //gameMaster.GetNextTopping().Subscribe(toppingViewer.SetNextToppingImage).AddTo(this);
     }
     
 }

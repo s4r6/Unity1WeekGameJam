@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PancakeParts : MonoBehaviour
 {
+    [SerializeField]
     private GameMaster _gameMaster;
     [SerializeField] private Pancake _pancake;
     [SerializeField] private float _bakedDegree;
