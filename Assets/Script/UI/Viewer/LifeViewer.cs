@@ -7,24 +7,32 @@ using UnityEngine.UI;
 
 public class LifeViewer : MonoBehaviour
 {
-    [SerializeField] private List<Image> lifeImages;
+    [SerializeField] private List<RectMask2D> lifeSliders;
 
-    private void Start()
-    {
-        AllActive();
-    }
+    private float currentHP;
 
     public void SetLife(float hp)
     {
-        int HP = (int)hp;
-        //lifeImages[HP-1].enabled = false; //描画でバグるので一時コメントアウト
-    }
+        //Listが0からHPが0
+        currentHP = hp;
+        Debug.Log(currentHP);
+        //currentHPの小数部分を切り捨てる。
+        int onePlaceHP = Mathf.FloorToInt(currentHP);
 
-    void AllActive()
-    {
-        foreach (var image in lifeImages)
+        //hpの整数部分のスライダーを1にする。
+        for (int i = 1; i < onePlaceHP; i++)
         {
-            image.enabled = true;
+            Debug.Log(i - 1);
+            lifeSliders[i - 1].padding = new Vector4(0, 0, 0, 0);
         }
+
+        float decimalHP = currentHP - onePlaceHP;
+        //HPが3の時に少数部分の計算を行わないので3以上の時にreturnする。
+        if (hp >= 3)
+        {
+            return;
+        }
+        //少数部分のスライダーを調整する
+        lifeSliders[onePlaceHP].padding = new Vector4( 0, 0, 0,100-(100 * decimalHP));
     }
 }

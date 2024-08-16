@@ -9,12 +9,8 @@ public class ToppingViewer : MonoBehaviour
 
     [SerializeField] private Image nextToppingImage;
     
-    public void SetNextToppingImage(string nextTopping)
+    public void SetNextToppingImage(ToppingList nextToppingList)
     {
-        Debug.Log($"next:{nextTopping}");
-        switch (nextTopping)
-        {
-            //case ""
-        }
+        Debug.Log($"{nextToppingList}");
     }
 }

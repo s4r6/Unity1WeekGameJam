@@ -9,7 +9,7 @@ public class ToppingMaker : MonoBehaviour
     public GameObject strawberryPrefab;
 
     ReactiveProperty<ToppingList> nextTopping = new ReactiveProperty<ToppingList>();
-    IReactiveProperty<ToppingList> OnChangeNextTopping => nextTopping;
+    public IReactiveProperty<ToppingList> OnChangeNextTopping => nextTopping;
 
 
     void Start()
