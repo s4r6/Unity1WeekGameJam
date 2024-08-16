@@ -1,0 +1,12 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public enum PancakeFlag
+{
+    BURNT,  //è≈Ç∞ÇΩ
+    DROPED, //óéÇ∆ÇµÇΩ
+    PERFECT,    //äÆ‡¯
+    BAKED,  //Ç‹Ç†Ç‹Ç†
+
+}
