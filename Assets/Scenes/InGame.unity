@@ -966,7 +966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76d86a1e282994e60aea5b115b260e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pancakePrefab: {fileID: 7354068179017570744, guid: 85e2ea88869755d478849665cbbffbbf, type: 3}
+  pancakePrefab: {fileID: 8896491092788010449, guid: 368e75e4221e90c46b177f63a04636f5, type: 3}
   _gameMaster: {fileID: 229697852}
 --- !u!1001 &856323225
 PrefabInstance:
