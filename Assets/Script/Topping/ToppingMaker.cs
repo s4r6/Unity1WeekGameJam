@@ -26,7 +26,8 @@ public class ToppingMaker : MonoBehaviour
         }
     }
 
-    private ToppingList SelectTopping()
+    //トッピングを指定範囲内で抽選
+    private ToppingList SelectTopping() 
     {
         var SelectedTopping = (ToppingList)Random.Range(1, 2);
         return SelectedTopping;

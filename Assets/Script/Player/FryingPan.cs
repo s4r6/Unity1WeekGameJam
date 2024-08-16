@@ -19,7 +19,6 @@ public class FryingPan : MonoBehaviour
         if (Input.GetKey(KeyCode.Space) && _maxPower > _chargePower)
         {
             _chargePower += _chargePowerSpeed * Time.deltaTime;
-            Debug.Log(_chargePower);
             if (_maxPower < _chargePower) { _chargePower = _maxPower; }
         }
         if (Input.GetKeyUp(KeyCode.Space))

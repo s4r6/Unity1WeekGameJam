@@ -61,10 +61,15 @@ public class GameMaster : MonoBehaviour
     void Update()
     {
         //デバッグ用
-        if (Input.GetKeyDown(KeyCode.O))    //"O"キーが押されると失敗
-            PancakeComplete(false);
-        if (Input.GetKeyDown(KeyCode.I))    //"I"が押されると成功
-            PancakeComplete(true);
+        if (Input.GetKeyDown(KeyCode.O))    //"O"キーが押されると焦げた
+            PancakeComplete(PancakeFlag.BURNT);
+        if (Input.GetKeyDown(KeyCode.I))    //"I"が押されると完璧
+            PancakeComplete(PancakeFlag.PERFECT);
+        if (Input.GetKeyDown(KeyCode.D))    //"D"キーが押されると落とした
+            PancakeComplete(PancakeFlag.DROPED);
+        if (Input.GetKeyDown(KeyCode.J))    //"J"が押されると焼けた
+            PancakeComplete(PancakeFlag.BAKED);
+
 
     }
 
@@ -79,20 +84,42 @@ public class GameMaster : MonoBehaviour
         resultMaster.time = timer.timeProperty.Value;   //現在の時間を渡す
         resultMaster.success = successCount.successProperty.Value;  //成功回数を渡す
 
+        Debug.Log(successCount.successProperty.Value);
+        Debug.Log(resultMaster.success);
+
         if(gameMode == "Build")
             repository.SendTimeToDataStore(timer.timeProperty.Value);   //時間を送信
 
         SceneManager.sceneLoaded -= OnSceneTransition;
     }
 
-    //falseなら焦げた(失敗),trueならきれいに焼けた(成功)
-    public void PancakeComplete(bool pancakeState)
+    //--------------------//
+    //BURNT   焦げた
+    //DROPED  落とした
+    //PERFECT 完璧
+    //BAKED   まあまあ
+    //-------------------//
+    public void PancakeComplete(PancakeFlag flag)
     {
-        if (!pancakeState)
-            lifePoint.SubtractLife();
-        else
-            successCount.AddSuccessCount();
+        switch(flag)
+        {
+            case PancakeFlag.BURNT:
+                lifePoint.SubtractLife();
+                break;
 
+            case PancakeFlag.DROPED:
+                lifePoint.SubtractLife();
+                break;
+
+            case PancakeFlag.PERFECT:
+                lifePoint.AddLife();
+                successCount.AddSuccessCount();
+                break;
+
+            case PancakeFlag.BAKED:
+                successCount.AddSuccessCount();
+                break;
+        }
 
         //パンケーキ作成
         _pancakeMaker.PancakeMake();
@@ -120,7 +147,7 @@ public class GameMaster : MonoBehaviour
     }
 
     //体力のReactivePropertyを外部に公開
-    public IReadOnlyReactiveProperty<int> GetLifeProperty()
+    public IReadOnlyReactiveProperty<float> GetLifeProperty()
     {
         return lifePoint.lifeProperty;
     }

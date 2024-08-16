@@ -14,9 +14,10 @@ public class LifeViewer : MonoBehaviour
         AllActive();
     }
 
-    public void SetLife(int hp)
+    public void SetLife(float hp)
     {
-        lifeImages[hp-1].enabled = false;
+        int HP = (int)hp;
+        //lifeImages[HP-1].enabled = false; //描画でバグるので一時コメントアウト
     }
 
     void AllActive()
