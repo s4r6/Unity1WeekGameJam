@@ -33,7 +33,7 @@ public class GameMaster : MonoBehaviour
         successCount = GetComponent<SuccessCount>();
 
         lifePoint.lifeProperty
-            .Where(x => x == LifePoint.MINLIFE) //‘Ì—Í‚ª0‚É‚È‚Á‚½‚ç
+            .Where(x => x <= 0) //‘Ì—Í‚ª0‚É‚È‚Á‚½‚ç
             .Subscribe(_ =>
             {
                 //ƒV[ƒ“‘JˆÚ
