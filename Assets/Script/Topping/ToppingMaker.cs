@@ -1,17 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class ToppingMaker : MonoBehaviour
 {
     public GameObject blueberryPrefab;
     public GameObject strawberryPrefab;
 
+    ReactiveProperty<ToppingList> nextTopping = new ReactiveProperty<ToppingList>();
+    IReactiveProperty<ToppingList> OnChangeNextTopping => nextTopping;
+
+
+    void Start()
+    {
+        nextTopping.Value = SelectTopping();    //開始時に次のトッピングを抽選    
+    }
+
     public void ToppingMake(){
         GameObject toppingPrefab = null;
-        var topping = SelectTopping();
 
-        switch (topping){
+        switch (nextTopping.Value){
             case ToppingList.blueberry:
                 toppingPrefab = blueberryPrefab;
                 break;
@@ -23,6 +32,7 @@ public class ToppingMaker : MonoBehaviour
         //プレハブが設定されている場合、ゲーム上に生成
         if (toppingPrefab != null){
             Instantiate(toppingPrefab, transform.position, Quaternion.identity);
+            nextTopping.Value = SelectTopping();    //次のトッピングを抽選
         }
     }
 

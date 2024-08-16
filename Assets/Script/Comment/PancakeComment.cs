@@ -2,12 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//パンケーキの焼き上がりの評価
-public enum PancakeFlag
+public enum PancakeComment
 {
+    COMMON, //まあまあの出来
+    PERFECT,    //完璧
     BURNT,  //焦げた
     DROPED, //落とした
-    PERFECT,    //完璧
-    BAKED,  //まあまあ
-
+    TIMEDOUT    //タイムアウト
 }
