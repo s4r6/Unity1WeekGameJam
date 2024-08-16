@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Timeline;
 using Zenject;
 
 public class Pancake : MonoBehaviour
@@ -24,17 +25,7 @@ public class Pancake : MonoBehaviour
         InjectComplete = true;
     }*/
 
-    [Inject]
-    private void InjectGameMaster(GameMaster master)
-    {
-        _gameMaster = master;
-        foreach (var part in _pancakeParts)
-        {
-            part.SetgameMaster(_gameMaster);
-        }
 
-        InjectComplete = true;
-    }
 
     // Update is called once per frame
     void Update()
@@ -66,6 +57,12 @@ public class Pancake : MonoBehaviour
     public void SetGameMaster(GameMaster gameMaster)
     {
         _gameMaster = gameMaster;
+        foreach (var part in _pancakeParts)
+        {
+            part.SetgameMaster(_gameMaster);
+        }
+
+        InjectComplete = true;
     }
 
     public void BakedCount() 

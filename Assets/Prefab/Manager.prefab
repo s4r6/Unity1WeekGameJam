@@ -47,6 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9357e878aad9342458f325673e35cbd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMode: Debug
+  _pancakeMaker: {fileID: 0}
+  _toppingMaker: {fileID: 0}
 --- !u!114 &2877434358963591430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life:
     value: 3
+  DecreaseValuePerSec: 0.005
 --- !u!114 &2877434358963591425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,8 +77,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8853d468da13f945b7eb9645f2a4940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time:
-    value: 100
 --- !u!114 &2877434358963591428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,5 +89,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c374cd1c138fea54b82de742c212edef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firePowerUpInterval: 20
-  fireIncreaseValue: 10
+  s_firePowerUpInterval: 2.3
+  fireIncreaseValue: 0.025
+  startFirePower: 5

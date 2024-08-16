@@ -42,16 +42,27 @@ public class PancakeParts : MonoBehaviour
         _gameMaster = gameMaster;
     }
 
+    /*
     private void OnCollisionStay2D(Collision2D collision)
     {
-        //Debug.Log("振れている");
-        //Debug.Log(collision.gameObject.tag);
-        if (collision.gameObject.tag == "Flyingpan")
+        Debug.Log("振れている");
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.CompareTag("Flyingpan"))
+        {
+            Debug.Log(Time.deltaTime);
+            _bakedDegree += _gameMaster.GetFire() * Time.deltaTime;//FixedUpdateなのでTime/Deltatimeは不要だけどこれがあるとフレーム換算しなくて済むので追加
+        }
+    }
+    */
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log("振れているTriger");
+        Debug.Log(collision.gameObject.tag);
+        if (collision.gameObject.CompareTag("Flyingpan"))
         {
             //Debug.Log(Time.deltaTime);
             _bakedDegree += _gameMaster.GetFire() * Time.deltaTime;//FixedUpdateなのでTime/Deltatimeは不要だけどこれがあるとフレーム換算しなくて済むので追加
         }
+
     }
-
-
 }
