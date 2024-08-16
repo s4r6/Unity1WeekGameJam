@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 
 public class LifePoint : MonoBehaviour
@@ -15,19 +16,18 @@ public class LifePoint : MonoBehaviour
     float DecreaseValuePerSec = 0.005f;
     float DecreaseRate = 1;
 
-    async void  Start()
+    void  Start()
     {
-        await StartLifeDecrease();
+        StartLifeDecrease(this.GetCancellationTokenOnDestroy()).Forget();
     }
 
     //指定時間ごとに体力減少
-    public async UniTask StartLifeDecrease()
+    public async UniTask StartLifeDecrease(CancellationToken cancellationToken)
     {
-        Debug.Log("火力アップ開始");
         while (true)
         {
             var ms_DecreaseTime = TranslateSecondToMs(DecreaseRate);
-            await UniTask.Delay(ms_DecreaseTime);
+            await UniTask.Delay(ms_DecreaseTime, cancellationToken: cancellationToken);
             SubtractLife(DecreaseValuePerSec);
             Debug.Log(life.Value);
         }

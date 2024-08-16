@@ -33,11 +33,11 @@ public class GameMaster : MonoBehaviour
         successCount = GetComponent<SuccessCount>();
 
         lifePoint.lifeProperty
-            .Where(x => x <= 0) //‘Ì—Í‚ª0‚É‚È‚Á‚½‚ç
+            .Where(x => x == 0) //‘Ì—Í‚ª0‚É‚È‚Á‚½‚ç
             .Subscribe(_ =>
             {
                 //ƒV[ƒ“‘JˆÚ
-                Debug.Log("ƒV[ƒ“‘JˆÚ");
+                Debug.Log(_);
                 SceneManager.sceneLoaded += OnSceneTransition;
                 SceneManager.LoadScene(
                     SceneDictionary.TypeOfName[SceneType.Result]
@@ -80,11 +80,7 @@ public class GameMaster : MonoBehaviour
 
         var resultMaster = GameObject.FindWithTag("Manager").GetComponent<ResultMaster>();  //resultManager‚ğæ“¾
 
-        resultMaster.time = timer.timeProperty.Value;   //Œ»İ‚ÌŠÔ‚ğ“n‚·
-        resultMaster.success = successCount.successProperty.Value;  //¬Œ÷‰ñ”‚ğ“n‚·
-
-        Debug.Log(successCount.successProperty.Value);
-        Debug.Log(resultMaster.success);
+        resultMaster.SetParam(timer.timeProperty.Value, successCount.successProperty.Value);
 
         if(gameMode == "Build")
             repository.SendTimeToDataStore(timer.timeProperty.Value);   //ŠÔ‚ğ‘—M
