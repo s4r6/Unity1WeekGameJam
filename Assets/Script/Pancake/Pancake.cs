@@ -47,9 +47,19 @@ public class Pancake : MonoBehaviour
             Destroy(this.gameObject);
         }
         if (_bakedNum == _pancakeParts.Count) {
-            Debug.Log("Ä‚«‚ ‚ª‚Á‚½");
-            _gameMaster.PancakeComplete(PancakeFlag.BAKED);
-            Destroy(this.gameObject);
+
+            if (_burntNum == 0)
+            {
+                Debug.Log("Š®àø‚ÉÄ‚«‚ ‚ª‚Á‚½");
+                _gameMaster.PancakeComplete(PancakeFlag.PERFECT);
+                Destroy(this.gameObject);
+            }
+            else {
+                Debug.Log("Ä‚«‚ ‚ª‚Á‚½");
+                _gameMaster.PancakeComplete(PancakeFlag.BAKED);
+                Destroy(this.gameObject);
+            }
+
         }
     }
 
