@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -11,12 +9,17 @@ public class ResultMaster : MonoBehaviour
     [SerializeField]
     Text successText; 
 
-    public float time = 0;
-    public int success = 0;
+    float time;
+    int success;
 
+    void Awake()
+    {
+        Debug.Log("Awake:" + time);    
+    }
 
     void Start()
     {
+        Debug.Log("Start:" + time);
         timeText.text = "Time:" + time;
         successText.text = "SuccessNum:" + success;
     }
@@ -26,5 +29,11 @@ public class ResultMaster : MonoBehaviour
         SceneManager.LoadScene(
             SceneDictionary.TypeOfName[SceneType.InGame]
             );
+    }
+
+    public void SetParam(float _time, int _success)
+    {
+        time = _time;
+        success = _success;
     }
 }
