@@ -255,6 +255,7 @@ GameObject:
   m_Component:
   - component: {fileID: 140595816}
   - component: {fileID: 140595815}
+  - component: {fileID: 140595817}
   m_Layer: 0
   m_Name: maker
   m_TagString: Untagged
@@ -291,6 +292,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &140595817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140595814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8cfa4b52851e42108afd431cc03f0ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blueberryPrefab: {fileID: 6727539728917903872, guid: 5ef7c53c1bb1b7641a3faf36e584df31, type: 3}
+  strawberryPrefab: {fileID: 53793325112495544, guid: 3666eebd1ef38cc4c90185fc63e5a652, type: 3}
 --- !u!1 &163411572
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +412,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99310540ca1ef074caa266c0ab429b55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  commentCanvasGroup: {fileID: 0}
+  starText: {fileID: 0}
+  commentText: {fileID: 0}
 --- !u!1 &206526090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,6 +1110,10 @@ PrefabInstance:
       propertyPath: _pancakeMaker
       value: 
       objectReference: {fileID: 140595815}
+    - target: {fileID: 2877434358963591431, guid: 834e2c89161f1be4e8e1538dc7d8280d, type: 3}
+      propertyPath: _toppingMaker
+      value: 
+      objectReference: {fileID: 140595817}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 834e2c89161f1be4e8e1538dc7d8280d, type: 3}
 --- !u!1 &1441613846
@@ -1218,7 +1240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fec8a2412b580a645857403417721565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameMaster: {fileID: 1291599779}
+  toppingMaker: {fileID: 0}
   toppingViewer: {fileID: 163411574}
 --- !u!114 &1517652365
 MonoBehaviour:
@@ -1274,6 +1296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57511fc91c3ba4a47b9bc418d97affdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reviewCommentViewer: {fileID: 0}
 --- !u!1 &1526006279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,6 +1719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life:
     value: 0
+  DecreaseValuePerSec: 0.005
 --- !u!4 &1924569789
 Transform:
   m_ObjectHideFlags: 0
@@ -1984,47 +2008,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129865693}
   m_CullTransparentMesh: 1
---- !u!1 &2137091939
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2137091941}
-  - component: {fileID: 2137091940}
-  m_Layer: 0
-  m_Name: reviewCommentMaker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2137091940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137091939}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 789e0f0ab3f7b1d47913731c79604978, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2137091941
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137091939}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
