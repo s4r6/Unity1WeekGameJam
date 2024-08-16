@@ -42,6 +42,7 @@ public class PancakeParts : MonoBehaviour
         _gameMaster = gameMaster;
     }
 
+    /*
     private void OnCollisionStay2D(Collision2D collision)
     {
         Debug.Log("U‚ê‚Ä‚¢‚é");
@@ -52,7 +53,7 @@ public class PancakeParts : MonoBehaviour
             _bakedDegree += _gameMaster.GetFire() * Time.deltaTime;//FixedUpdate‚È‚Ì‚ÅTime/Deltatime‚Í•s—v‚¾‚¯‚Ç‚±‚ê‚ª‚ ‚é‚ÆƒtƒŒ[ƒ€Š·Z‚µ‚È‚­‚ÄÏ‚Ş‚Ì‚Å’Ç‰Á
         }
     }
-
+    */
     private void OnTriggerStay2D(Collider2D collision)
     {
         Debug.Log("U‚ê‚Ä‚¢‚éTriger");
