@@ -14,7 +14,7 @@ public class Pancake : MonoBehaviour
 
     private bool InjectComplete = false;
 
-    private void Start()
+    /*private void Start()
     {
         foreach (var part in _pancakeParts)
         {
@@ -22,11 +22,12 @@ public class Pancake : MonoBehaviour
         }
 
         InjectComplete = true;
-    }
+    }*/
 
     [Inject]
     private void InjectGameMaster(GameMaster master)
     {
+        _gameMaster = master;
         foreach (var part in _pancakeParts)
         {
             part.SetgameMaster(_gameMaster);
