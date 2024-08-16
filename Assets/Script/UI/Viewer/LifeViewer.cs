@@ -18,11 +18,22 @@ public class LifeViewer : MonoBehaviour
         //currentHPの小数部分を切り捨てる。
         int onePlaceHP = Mathf.FloorToInt(currentHP);
 
+        /*
         //hpの整数部分のスライダーを1にする。
         for (int i = 1; i < onePlaceHP; i++)
         {
             Debug.Log(i - 1);
             lifeSliders[i - 1].padding = new Vector4(0, 0, 0, 0);
+        }
+        */
+        //完全に削れている星と完全に残っている星の見た目を変更する
+        for (int i = 0; i < lifeSliders.Count; i++) {
+
+            if (i <= onePlaceHP) {
+                lifeSliders[i].padding = new Vector4(0, 0, 0, 0);
+            } else if (i > onePlaceHP) {
+                lifeSliders[i].padding = new Vector4(0, 0, 0, 100);
+            }
         }
 
         float decimalHP = currentHP - onePlaceHP;
@@ -31,7 +42,9 @@ public class LifeViewer : MonoBehaviour
         {
             return;
         }
-        //少数部分のスライダーを調整する
-        lifeSliders[onePlaceHP].padding = new Vector4( 0, 0, 0,100-(100 * decimalHP));
+        if (onePlaceHP >= 0) {
+            //少数部分のスライダーを調整する
+            lifeSliders[onePlaceHP].padding = new Vector4(0, 0, 0, 100 - (100 * decimalHP));
+        }       
     }
 }
