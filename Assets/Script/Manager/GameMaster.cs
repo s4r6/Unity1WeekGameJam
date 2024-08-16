@@ -3,6 +3,7 @@ using UniRx;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using Zenject;
+
 public class GameMaster : MonoBehaviour
 {
     [SerializeField]
@@ -11,9 +12,8 @@ public class GameMaster : MonoBehaviour
     [SerializeField][Tooltip("パンケーキメーカー")] private PancakeMaker _pancakeMaker;
     [SerializeField] [Tooltip("トッピングメーカー")] private ToppingMaker _toppingMaker;
 
-    //[SerializeField][Tooltip("次に墜ちてくるトッピング")] private ToppingList _nextTopping;
-    ReactiveProperty<ToppingList> nextTopping = new ReactiveProperty<ToppingList>();
-    IReadOnlyReactiveProperty<ToppingList> nextToppingProperty => nextTopping;
+    Subject<PancakeComment> comment = new Subject<PancakeComment>();
+    public ISubject<PancakeComment> OnComment => comment;   //コメントが言われたとき
 
     //Gameで使用する各パラメータ
     LifePoint lifePoint;
@@ -53,7 +53,6 @@ public class GameMaster : MonoBehaviour
         //パンケーキを作成
         _pancakeMaker.PancakeMake();
         //トッピングを抽選
-        //nextTopping.Value = (ToppingList)Random.Range(1, 2);
         _toppingMaker.ToppingMake();
     }
 
@@ -65,7 +64,7 @@ public class GameMaster : MonoBehaviour
             PancakeComplete(PancakeFlag.BURNT);
         if (Input.GetKeyDown(KeyCode.I))    //"I"が押されると完璧
             PancakeComplete(PancakeFlag.PERFECT);
-        if (Input.GetKeyDown(KeyCode.D))    //"D"キーが押されると落とした
+        if (Input.GetKeyDown(KeyCode.P))    //"P"キーが押されると落とした
             PancakeComplete(PancakeFlag.DROPED);
         if (Input.GetKeyDown(KeyCode.J))    //"J"が押されると焼けた
             PancakeComplete(PancakeFlag.BAKED);
@@ -105,19 +104,23 @@ public class GameMaster : MonoBehaviour
         {
             case PancakeFlag.BURNT:
                 lifePoint.SubtractLife();
+                comment.OnNext(PancakeComment.BURNT);
                 break;
 
             case PancakeFlag.DROPED:
                 lifePoint.SubtractLife();
+                comment.OnNext(PancakeComment.DROPED);
                 break;
 
             case PancakeFlag.PERFECT:
                 lifePoint.AddLife();
                 successCount.AddSuccessCount();
+                comment.OnNext(PancakeComment.PERFECT);
                 break;
 
             case PancakeFlag.BAKED:
                 successCount.AddSuccessCount();
+                comment.OnNext(PancakeComment.COMMON);
                 break;
         }
 
@@ -134,12 +137,6 @@ public class GameMaster : MonoBehaviour
         return firepower.fireProperty.Value;
     }
 
-    //次のトッピングを公開
-    public IReadOnlyReactiveProperty<ToppingList> GetNextTopping()
-    {
-        return nextToppingProperty;
-    }
-
     //時間のReactivePropertyを外部に公開
     public IReadOnlyReactiveProperty<float> GetTimeProperty()
     {
@@ -152,10 +149,9 @@ public class GameMaster : MonoBehaviour
         return lifePoint.lifeProperty;
     }
 
+    //成功回数のReactivePropertyを外部に公開
     public IReadOnlyReactiveProperty<int> GetSuccessProperty()
     {
         return successCount.successProperty;
     }
-
-
 }
