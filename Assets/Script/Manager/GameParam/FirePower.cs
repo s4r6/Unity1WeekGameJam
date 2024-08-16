@@ -51,11 +51,4 @@ public class FirePower : MonoBehaviour
         fire.Value += increaseValue;
         Debug.Log("Œ»İ‚Ì‰Î—Í:" + fire.Value);
     }
-
-    void DecreaseFirePower(float decreaseValue)
-    {
-        if (decreaseValue <= 0)
-            throw new ArgumentOutOfRangeException("ˆø”‚Í³‚Ì®”‚Å‚È‚­‚Ä‚Í‚¢‚¯‚Ü‚¹‚ñ.");
-        fire.Value -= decreaseValue;
-    }
 }

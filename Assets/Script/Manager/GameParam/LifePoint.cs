@@ -8,6 +8,9 @@ using Cysharp.Threading.Tasks;
 
 public class LifePoint : MonoBehaviour
 {
+    public static readonly int MINLIFE = 0;
+    public static readonly int MAXLIFE = 3;
+
     [SerializeField]
     ReactiveProperty<float> life = new FloatReactiveProperty();
     public IReactiveProperty<float> lifeProperty => life;
@@ -44,8 +47,8 @@ public class LifePoint : MonoBehaviour
         if (minus <= 0)
             throw new ArgumentOutOfRangeException("ˆø”‚Í³‚Ì®”‚Å‚È‚­‚Ä‚Í‚¢‚¯‚Ü‚¹‚ñ.");
         life.Value -= minus;
-        if (life.Value < 0)
-            life.Value = 0;
+        if (life.Value < MINLIFE)
+            life.Value = MINLIFE;
     }
 
     public void AddLife(int plus = 1)
@@ -53,5 +56,7 @@ public class LifePoint : MonoBehaviour
         if (plus <= 0)
             throw new ArgumentOutOfRangeException("ˆø”‚Í³‚Ì®”‚Å‚È‚­‚Ä‚Í‚¢‚¯‚Ü‚¹‚ñ.");
         life.Value += plus;
+        if (life.Value > MAXLIFE)
+            life.Value = MAXLIFE;
     }
 }
