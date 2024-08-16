@@ -15,7 +15,6 @@ public class LifeViewer : MonoBehaviour
     {
         //List‚ª0‚©‚çHP‚ª0
         currentHP = hp;
-        Debug.Log(currentHP);
         //currentHP‚Ì¬”•”•ª‚ğØ‚èÌ‚Ä‚éB
         int onePlaceHP = Mathf.FloorToInt(currentHP);
 
