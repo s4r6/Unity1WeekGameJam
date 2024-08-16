@@ -934,7 +934,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707039185}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1520,7 +1520,7 @@ MonoBehaviour:
   toppingImageList:
   - {fileID: 21300000, guid: c22f14d2662bb40d0946042fd8bb822f, type: 3}
   - {fileID: 21300000, guid: c629dd746e9c6e04d894820c823012f9, type: 3}
-  nextToppingImage: {fileID: 0}
+  nextToppingImage: {fileID: 2126541013}
 --- !u!114 &1323681401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1546,7 +1546,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43bc777caa3e4614da4672bcbff53f40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeSliders: []
+  lifeSliders:
+  - {fileID: 41733275}
+  - {fileID: 707039187}
+  - {fileID: 1576159095}
 --- !u!4 &1323681403
 Transform:
   m_ObjectHideFlags: 0
