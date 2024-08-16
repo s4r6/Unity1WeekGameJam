@@ -7,8 +7,9 @@ public class ToppingMaker : MonoBehaviour
     public GameObject blueberryPrefab;
     public GameObject strawberryPrefab;
 
-    public void ToppingMake(ToppingList topping){
+    public void ToppingMake(){
         GameObject toppingPrefab = null;
+        var topping = SelectTopping();
 
         switch (topping){
             case ToppingList.blueberry:
@@ -23,5 +24,11 @@ public class ToppingMaker : MonoBehaviour
         if (toppingPrefab != null){
             Instantiate(toppingPrefab, transform.position, Quaternion.identity);
         }
+    }
+
+    private ToppingList SelectTopping()
+    {
+        var SelectedTopping = (ToppingList)Random.Range(1, 2);
+        return SelectedTopping;
     }
 }

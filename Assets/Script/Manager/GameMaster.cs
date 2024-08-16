@@ -9,6 +9,7 @@ public class GameMaster : MonoBehaviour
     string gameMode = "Debug";  //Debug,Buildでモードを切り替える(Rankingに送信するかしないか決定)
 
     [SerializeField][Tooltip("パンケーキメーカー")] private PancakeMaker _pancakeMaker;
+    [SerializeField] [Tooltip("トッピングメーカー")] private ToppingMaker _toppingMaker;
 
     //[SerializeField][Tooltip("次に墜ちてくるトッピング")] private ToppingList _nextTopping;
     ReactiveProperty<ToppingList> nextTopping = new ReactiveProperty<ToppingList>();
@@ -52,7 +53,8 @@ public class GameMaster : MonoBehaviour
         //パンケーキを作成
         _pancakeMaker.PancakeMake();
         //トッピングを抽選
-        nextTopping.Value = (ToppingList)Random.Range(1, 2);
+        //nextTopping.Value = (ToppingList)Random.Range(1, 2);
+        _toppingMaker.ToppingMake();
     }
 
 
@@ -95,8 +97,8 @@ public class GameMaster : MonoBehaviour
         //パンケーキ作成
         _pancakeMaker.PancakeMake();
         //トッピング作成
-        nextTopping.Value = (ToppingList)Random.Range(1, 2);
-
+        //nextTopping.Value = (ToppingList)Random.Range(1, 2);
+        _toppingMaker.ToppingMake();
     }
 
     //現在の火力を外部に公開
