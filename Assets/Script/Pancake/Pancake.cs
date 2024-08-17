@@ -34,7 +34,10 @@ public class Pancake : MonoBehaviour
     {
         if (!InjectComplete) return;
 
-        if (_burntNum/_pancakeParts.Count >= 0.5) {
+
+        if ((float)_burntNum/(float)_pancakeParts.Count >= 0.5) {
+
+
             _gameMaster.PancakeComplete(PancakeFlag.BURNT);
             Destroy(this.gameObject);
         }
@@ -72,10 +75,12 @@ public class Pancake : MonoBehaviour
     public void BurntCount()
     {
         _burntNum += 1;
+        Debug.Log("Å‚°‚½”" + _burntNum);
+        Debug.Log("Å‚°‚½Š„‚è" + _burntNum / _pancakeParts.Count);
     }
 
     /// <summary>
-    /// ���������ƔF��
+    /// —Ž‰º‚µ‚½‚Æ”FŽ¯
     /// </summary>
     public void Drop() {
         
