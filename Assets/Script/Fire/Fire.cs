@@ -32,15 +32,15 @@ public class Fire : MonoBehaviour
 
         // デバッグ用
         if (Input.GetKey(KeyCode.A)){
-            fireSize = 0.8f;
+            firePower = 0.8f;
         }
         if (Input.GetKey(KeyCode.S)){
-            fireSize = 1.5f;
+            firePowerd = 1.5f;
         }
 
         // サイズが変更された場合にのみChangeFireを呼び出す
-        if (transform.localScale.x != fireSize * _initialScale.x) {
-            ChangeFire(fireSize);
+        if (transform.localScale.x != firePower * _initialScale.x) {
+            ChangeFire(firePower);
         }
     }
 
