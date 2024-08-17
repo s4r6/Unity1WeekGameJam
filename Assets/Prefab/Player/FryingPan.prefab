@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 48ee35f40f9d51a4b8d7c8ca459b0f1a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f7febe10d9762479acb184888a3193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxPower: 60
-  _chargePowerSpeed: 120
+  _maxPower: 100
+  _chargePowerSpeed: 100
   _myRB2D: {fileID: 1540048131459880925}
 --- !u!60 &3003868015458764190
 PolygonCollider2D:
