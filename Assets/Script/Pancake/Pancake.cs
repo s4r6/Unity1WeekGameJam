@@ -74,4 +74,12 @@ public class Pancake : MonoBehaviour
     {
         _burntNum += 1;
     }
+
+    /// <summary>
+    /// —Ž‰º‚µ‚½‚Æ”FŽ¯
+    /// </summary>
+    public void Drop() {
+        _gameMaster.PancakeComplete(PancakeFlag.DROPED);
+        Destroy(this.gameObject);
+    }
 }
