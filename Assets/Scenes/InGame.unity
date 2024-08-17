@@ -1008,6 +1008,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pancakePrefab: {fileID: 3411725688378098937, guid: 75145be785c27ad43b3681489f04207c, type: 3}
   _gameMaster: {fileID: 229697852}
+  _makePosition: {x: -1.5, y: 5, z: 0}
+  _flyingPan: {fileID: 1780413545}
 --- !u!1 &805595059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,7 +1801,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1540048131459880914, guid: 4938da3fe75c32d4eb1ddc68d21a2adf, type: 3}
   m_PrefabInstance: {fileID: 1664219086}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1780413545}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1f7febe10d9762479acb184888a3193, type: 3}
@@ -1933,6 +1935,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1780413545 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1540048131459880921, guid: 4938da3fe75c32d4eb1ddc68d21a2adf, type: 3}
+  m_PrefabInstance: {fileID: 1664219086}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1833817923
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,6 +1986,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blueberryPrefab: {fileID: 6727539728917903872, guid: 5ef7c53c1bb1b7641a3faf36e584df31, type: 3}
   strawberryPrefab: {fileID: 53793325112495544, guid: 3666eebd1ef38cc4c90185fc63e5a652, type: 3}
+  _dropPosition: {x: -1.5, y: 7, z: 0}
+  _FlyingPan: {fileID: 1780413545}
 --- !u!1 &2062494828
 GameObject:
   m_ObjectHideFlags: 0
