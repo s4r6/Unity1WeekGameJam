@@ -367,6 +367,10 @@ PrefabInstance:
       value: Manager
       objectReference: {fileID: 0}
     - target: {fileID: 2877434358963591431, guid: 834e2c89161f1be4e8e1538dc7d8280d, type: 3}
+      propertyPath: _startTime
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877434358963591431, guid: 834e2c89161f1be4e8e1538dc7d8280d, type: 3}
       propertyPath: _pancakeMaker
       value: 
       objectReference: {fileID: 761460745}

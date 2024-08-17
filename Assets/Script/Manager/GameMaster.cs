@@ -4,7 +4,8 @@ using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using Zenject;
 using System.Diagnostics;
-
+using System.Threading;
+using Cysharp.Threading.Tasks;
 public class GameMaster : MonoBehaviour
 {
     [SerializeField]
@@ -12,6 +13,7 @@ public class GameMaster : MonoBehaviour
 
     [SerializeField][Tooltip("パンケーキメーカー")] private PancakeMaker _pancakeMaker;
     [SerializeField] [Tooltip("トッピングメーカー")] private ToppingMaker _toppingMaker;
+    [SerializeField][Tooltip("スタートまでの秒数")] private int _startTime;
 
     Subject<PancakeComment> comment = new Subject<PancakeComment>();
     public ISubject<PancakeComment> OnComment => comment;   //コメントが言われたとき
@@ -25,6 +27,8 @@ public class GameMaster : MonoBehaviour
     //スコアを保存しておくデータベース(Ranking)
     [Inject]
     IRepositiory repository; 
+
+    
 
     void Awake()
     {
@@ -51,10 +55,13 @@ public class GameMaster : MonoBehaviour
                 comment.OnNext(PancakeComment.TIMEDOUT);
             }).AddTo(this);
 
+        GameStart(this.GetCancellationTokenOnDestroy()).Forget();
+
     }
 
-    void Start()
-    {
+
+    private async UniTask GameStart(CancellationToken cancellationToken) {
+        await UniTask.Delay(_startTime * 1000, cancellationToken: cancellationToken);
         timer.OnStart(); //カウントアップスタート
         firepower.StartPowerUp(this.GetCancellationTokenOnDestroy()).Forget();
         //パンケーキを作成
@@ -62,7 +69,6 @@ public class GameMaster : MonoBehaviour
         //トッピングを抽選
         _toppingMaker.ToppingMake();
     }
-
 
     void Update()
     {
