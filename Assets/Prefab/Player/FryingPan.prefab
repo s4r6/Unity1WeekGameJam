@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1540048131459880925}
   - component: {fileID: 1540048131459880914}
   - component: {fileID: 3003868015458764190}
-  - component: {fileID: 6741875573791296268}
   m_Layer: 7
   m_Name: FryingPan
   m_TagString: Flyingpan
@@ -188,32 +187,6 @@ PolygonCollider2D:
       - {x: 0.21249005, y: -0.9435821}
       - {x: 0.28581122, y: -0.9261762}
       - {x: 0.5602571, y: -0.8145828}
---- !u!61 &6741875573791296268
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540048131459880921}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1.6551449, y: -0.768957}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.6, y: 5.4}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.4809346, y: 0.41922116}
-  m_EdgeRadius: 0
 --- !u!1 &3010764138383785125
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +196,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8986699565156210849}
-  - component: {fileID: 3926158060432603121}
+  - component: {fileID: 3040461515178096417}
   m_Layer: 7
   m_Name: Square
   m_TagString: Flyingpan
@@ -238,16 +211,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3010764138383785125}
-  m_LocalRotation: {x: 0, y: 0, z: 0.30976388, w: 0.95081353}
-  m_LocalPosition: {x: -3.9718, y: -0.4247, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.36260068, w: 0.9319446}
+  m_LocalPosition: {x: -3.9, y: -0.54, z: 0}
   m_LocalScale: {x: 0.4, y: 1.633088, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1540048131459880924}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 36.09}
---- !u!61 &3926158060432603121
-BoxCollider2D:
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 42.52}
+--- !u!60 &3040461515178096417
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -262,16 +235,27 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.17210011, y: -0.050012328}
+      - {x: 0.17193049, y: 0.2815789}
+      - {x: -0.3199649, y: 0.10403682}
+      - {x: -0.36233482, y: -0.17984718}
+      - {x: 0.6718948, y: -0.54921395}
+      - {x: 6.318669, y: -1.7678319}
+      - {x: 7.5442023, y: -1.9392946}
+      - {x: 9.019639, y: -1.7397231}
+      - {x: 7.531674, y: -1.7414975}
+      - {x: 6.5685554, y: -1.6356533}
+      - {x: 3.8742774, y: -0.950118}
+      - {x: 0.8039308, y: -0.33629248}
 --- !u!1 &8333594215071901736
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +265,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7251211760939547756}
-  - component: {fileID: 6042968368195843453}
   m_Layer: 7
   m_Name: Square (1)
   m_TagString: Flyingpan
@@ -297,36 +280,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8333594215071901736}
   m_LocalRotation: {x: 0, y: 0, z: -0.3090171, w: 0.95105654}
-  m_LocalPosition: {x: 0.568, y: -0.453, z: 0}
+  m_LocalPosition: {x: 0.568, y: -0.51, z: 0}
   m_LocalScale: {x: 0.4, y: 1.633088, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1540048131459880924}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -36}
---- !u!61 &6042968368195843453
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8333594215071901736}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
