@@ -409,6 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57511fc91c3ba4a47b9bc418d97affdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameMaster: {fileID: 0}
   reviewCommentViewer: {fileID: 1969103725}
 --- !u!1 &1046274900
 GameObject:
@@ -814,7 +815,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   commentCanvasGroup: {fileID: 422807004}
-  starText: {fileID: 1046274902}
   commentText: {fileID: 2083395928}
 --- !u!1 &2083395926
 GameObject:
