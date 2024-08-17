@@ -11,21 +11,27 @@ public class PancakeParts : MonoBehaviour
     [SerializeField][Tooltip("この値より下のy座標にて落ちたと判定をする")] private float _dropAreaY;
     private bool _baked;
     private bool _burnt;
+    [SerializeField][Tooltip("焼き色のイラスト")] private SpriteRenderer _bakedSprite;
+    [SerializeField][Tooltip("焦げたイラスト")] private SpriteRenderer _burntSprite;
 
     // Update is called once per frame
     void Update()
     {
         if (_bakedDegree < 50)
         {//焼ける前
-
+            _bakedSprite.color = new Color32(255, 255, 255, (byte)(_bakedDegree * 2.41f));
+            _burntSprite.color = new Color32(255, 255, 255, 0);
         }
         else if (_bakedDegree < 100)
         {//焦げる前
+            _bakedSprite.color = new Color32(255, 255, 255, 255);
+            _burntSprite.color = new Color32(255, 255, 255, (byte)((_bakedDegree - 50f) * 2.41f));
             if (!_baked)
             {
                 Debug.Log("焼けた");
                 _baked = true;
                 _pancake.BakedCount();
+
             }
         }
         else {
@@ -34,6 +40,8 @@ public class PancakeParts : MonoBehaviour
                 Debug.Log("焦げた");
                 _burnt = true;
                 _pancake.BurntCount();
+                _bakedSprite.color = new Color32(255, 255, 255, 255);
+                _burntSprite.color = new Color32(255, 255, 255, 255);
             }
         }
 
