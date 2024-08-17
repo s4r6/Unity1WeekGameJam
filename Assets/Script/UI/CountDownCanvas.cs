@@ -22,7 +22,6 @@ public class CountDownCanvas : MonoBehaviour
             textMeshProUGUI.text = count.ToString();
             yield return new WaitForSeconds(1.0f);
             count -= 1;
-            Debug.Log(count);
         }
         Destroy(this.gameObject);
     }

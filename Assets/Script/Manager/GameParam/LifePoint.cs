@@ -44,7 +44,6 @@ public class LifePoint : MonoBehaviour
                 TimedOutEvent.OnNext(default);
                 SetPrevLife();
             }
-            Debug.Log(life.Value);
         }
     }
 
