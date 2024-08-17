@@ -15,13 +15,13 @@ public class ReviewCommentViewer : MonoBehaviour
 
     //canvasGroupはpanelがもってあるのでパネルをアタッチしてください
     [SerializeField] private CanvasGroup commentCanvasGroup;
-    [SerializeField] private TextMeshProUGUI starText;
+    //[SerializeField] private TextMeshProUGUI starText;
     [SerializeField] private TextMeshProUGUI commentText;
 
     private RectTransform canvasRectTransform;
     private void Start()
     {
-        csvFile = Resources.Load("reviewComment") as TextAsset;
+        csvFile = Resources.Load("PancakeComment") as TextAsset;
         StringReader reader = new StringReader(csvFile.text);
 
         while (reader.Peek() != -1)
@@ -36,25 +36,12 @@ public class ReviewCommentViewer : MonoBehaviour
     }
     
     //コメントに対応したテキストを書き込む
-    public void ShowComment(float review)
+    public void ShowComment(PancakeComment pancakeComment)
     {
-        int reviewStar = Mathf.RoundToInt(review);
-        if (reviewStar > 5)
-        {
-            reviewStar = 5;
-        }
-        else if (reviewStar < 1)
-        {
-            reviewStar = 1;
-        }
-        string stringReviewStar = reviewStar.ToString();
-        
-        
         //StringReviewStar(星の数)に対応したコメントを全て検索する。
-        var reviewCommnets = csvData.FindAll(x => x[0] == stringReviewStar);
+        var reviewCommnets = csvData.FindAll(x => x[0] == pancakeComment.ToString());
         
         int randomNum = Random.Range(0, reviewCommnets.Count);
-        starText.text = $"星{review:f1}";
         commentText.text = reviewCommnets[randomNum][1];
         CommentMove();
     }
