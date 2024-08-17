@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3411725686583350990}
   - component: {fileID: 3411725686583350989}
   - component: {fileID: 3411725686583350988}
+  - component: {fileID: 9067046186758111184}
   m_Layer: 0
   m_Name: bone_7
   m_TagString: Untagged
@@ -143,6 +144,21 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 10
+--- !u!114 &9067046186758111184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411725686583350986}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameMaster: {fileID: 0}
+  _pancake: {fileID: 3411725688378098939}
+  _bakedDegree: 0
 --- !u!1 &3411725686787210135
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,6 +173,7 @@ GameObject:
   - component: {fileID: 3411725686787210123}
   - component: {fileID: 3411725686787210122}
   - component: {fileID: 3411725686787210121}
+  - component: {fileID: 7213123758139605157}
   m_Layer: 0
   m_Name: bone_2
   m_TagString: Untagged
@@ -286,6 +303,21 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 10
+--- !u!114 &7213123758139605157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411725686787210135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameMaster: {fileID: 0}
+  _pancake: {fileID: 3411725688378098939}
+  _bakedDegree: 0
 --- !u!1 &3411725686788614207
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +331,7 @@ GameObject:
   - component: {fileID: 3411725686788614195}
   - component: {fileID: 3411725686788614194}
   - component: {fileID: 3411725686788614193}
+  - component: {fileID: 3845438883289424170}
   m_Layer: 0
   m_Name: bone_6
   m_TagString: Untagged
@@ -411,6 +444,21 @@ PolygonCollider2D:
       - {x: 0.04, y: 0.22}
       - {x: 0.04, y: -0.16}
       - {x: 0.29, y: -0.31}
+--- !u!114 &3845438883289424170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411725686788614207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameMaster: {fileID: 0}
+  _pancake: {fileID: 3411725688378098939}
+  _bakedDegree: 0
 --- !u!1 &3411725686813197908
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +598,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameMaster: {fileID: 0}
-  _pancake: {fileID: 0}
+  _pancake: {fileID: 3411725688378098939}
   _bakedDegree: 0
 --- !u!1 &3411725686863616334
 GameObject:
@@ -566,6 +614,7 @@ GameObject:
   - component: {fileID: 3411725686863616322}
   - component: {fileID: 3411725686863616321}
   - component: {fileID: 3411725686863616320}
+  - component: {fileID: 7724139606469049841}
   m_Layer: 0
   m_Name: bone_8
   m_TagString: Untagged
@@ -695,6 +744,21 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 10
+--- !u!114 &7724139606469049841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411725686863616334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameMaster: {fileID: 0}
+  _pancake: {fileID: 3411725688378098939}
+  _bakedDegree: 0
 --- !u!1 &3411725687155334066
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +773,7 @@ GameObject:
   - component: {fileID: 3411725687155334070}
   - component: {fileID: 3411725687155334069}
   - component: {fileID: 3411725687155334068}
+  - component: {fileID: 1041492444128860735}
   m_Layer: 0
   m_Name: bone_5
   m_TagString: Untagged
@@ -838,6 +903,21 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 10
+--- !u!114 &1041492444128860735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411725687155334066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameMaster: {fileID: 0}
+  _pancake: {fileID: 3411725688378098939}
+  _bakedDegree: 0
 --- !u!1 &3411725687381561020
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,6 +932,7 @@ GameObject:
   - component: {fileID: 3411725687381561008}
   - component: {fileID: 3411725687381561023}
   - component: {fileID: 3411725687381561022}
+  - component: {fileID: 344830758111839138}
   m_Layer: 0
   m_Name: bone_10
   m_TagString: Untagged
@@ -981,6 +1062,21 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 10
+--- !u!114 &344830758111839138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411725687381561020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameMaster: {fileID: 0}
+  _pancake: {fileID: 3411725688378098939}
+  _bakedDegree: 0
 --- !u!1 &3411725687429220855
 GameObject:
   m_ObjectHideFlags: 0
@@ -995,6 +1091,7 @@ GameObject:
   - component: {fileID: 3411725687429220843}
   - component: {fileID: 3411725687429220842}
   - component: {fileID: 3411725687429220841}
+  - component: {fileID: 7377735408573919264}
   m_Layer: 0
   m_Name: bone_9
   m_TagString: Untagged
@@ -1124,6 +1221,21 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 10
+--- !u!114 &7377735408573919264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411725687429220855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameMaster: {fileID: 0}
+  _pancake: {fileID: 3411725688378098939}
+  _bakedDegree: 0
 --- !u!1 &3411725687595968604
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,6 +1250,7 @@ GameObject:
   - component: {fileID: 3411725687595968592}
   - component: {fileID: 3411725687595968607}
   - component: {fileID: 3411725687595968606}
+  - component: {fileID: 3591189322114458430}
   m_Layer: 0
   m_Name: bone_3
   m_TagString: Untagged
@@ -1267,6 +1380,21 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 10
+--- !u!114 &3591189322114458430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411725687595968604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameMaster: {fileID: 0}
+  _pancake: {fileID: 3411725688378098939}
+  _bakedDegree: 0
 --- !u!1 &3411725688071931295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1281,6 +1409,7 @@ GameObject:
   - component: {fileID: 3411725688071931283}
   - component: {fileID: 3411725688071931282}
   - component: {fileID: 3411725688071931281}
+  - component: {fileID: 7795499237400988361}
   m_Layer: 0
   m_Name: bone_4
   m_TagString: Untagged
@@ -1410,6 +1539,21 @@ SpringJoint2D:
   m_Distance: 0.005
   m_DampingRatio: 0.3
   m_Frequency: 10
+--- !u!114 &7795499237400988361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411725688071931295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f8296f67dc570b4887863a96029378a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameMaster: {fileID: 0}
+  _pancake: {fileID: 3411725688378098939}
+  _bakedDegree: 0
 --- !u!1 &3411725688378098937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1551,6 +1695,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _pancakeParts:
   - {fileID: 3411725686813197909}
+  - {fileID: 7213123758139605157}
+  - {fileID: 3591189322114458430}
+  - {fileID: 7795499237400988361}
+  - {fileID: 1041492444128860735}
+  - {fileID: 3845438883289424170}
+  - {fileID: 9067046186758111184}
+  - {fileID: 7724139606469049841}
+  - {fileID: 7377735408573919264}
+  - {fileID: 344830758111839138}
 --- !u!114 &3411725688378098938
 MonoBehaviour:
   m_ObjectHideFlags: 0
