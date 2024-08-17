@@ -66,7 +66,7 @@ public class GameMaster : MonoBehaviour
         //パンケーキを作成
         _pancakeMaker.PancakeMake();
         //トッピングを抽選
-        _toppingMaker.ToppingMake();
+        _toppingMaker.ChangeTopping();
     }
 
     void Update()

@@ -900,6 +900,14 @@ PrefabInstance:
       value: Hand
       objectReference: {fileID: 0}
     - target: {fileID: 4192910641535996239, guid: 218f02ce4ee50f2429fabf2b93d635a2, type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 3.7724998
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192910641535996239, guid: 218f02ce4ee50f2429fabf2b93d635a2, type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4192910641535996239, guid: 218f02ce4ee50f2429fabf2b93d635a2, type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 613615102}
@@ -1826,6 +1834,10 @@ PrefabInstance:
       propertyPath: _FlyingPan
       value: 
       objectReference: {fileID: 1780413545}
+    - target: {fileID: 5329979085738076290, guid: b297df70461a0ac4fa85e4320c7e971f, type: 3}
+      propertyPath: _gameMaster
+      value: 
+      objectReference: {fileID: 229697852}
     - target: {fileID: 5329979085738076291, guid: b297df70461a0ac4fa85e4320c7e971f, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -1917,7 +1929,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7497054583836641044, guid: 35bb58da5c0afb04f8d74c8e8406265f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -402.78003
+      value: -402.78
       objectReference: {fileID: 0}
     - target: {fileID: 7497054584430048377, guid: 35bb58da5c0afb04f8d74c8e8406265f, type: 3}
       propertyPath: m_Name
