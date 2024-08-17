@@ -2276,10 +2276,6 @@ PrefabInstance:
       propertyPath: _gameMaster
       value: 
       objectReference: {fileID: 229697852}
-    - target: {fileID: 3007027646783239073, guid: 94528c1ffc9754e4fb8d4383b543790a, type: 3}
-      propertyPath: pancakePrefab
-      value: 
-      objectReference: {fileID: 3411725688378098937, guid: 75145be785c27ad43b3681489f04207c, type: 3}
     - target: {fileID: 3007027646783239087, guid: 94528c1ffc9754e4fb8d4383b543790a, type: 3}
       propertyPath: m_Name
       value: PancekeMaker

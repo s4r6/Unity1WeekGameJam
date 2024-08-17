@@ -44,6 +44,13 @@ public class GameMaster : MonoBehaviour
                     );
             }).AddTo(this);
 
+        lifePoint.OnTimeOut
+            .Subscribe(_ =>
+            {
+                UnityEngine.Debug.Log("timeout");
+                comment.OnNext(PancakeComment.TIMEDOUT);
+            }).AddTo(this);
+
     }
 
     void Start()
@@ -125,13 +132,8 @@ public class GameMaster : MonoBehaviour
                 break;
         }
 
-        if (lifePoint.CalcLifeDifference() <= -1)
-        {
-            comment.OnNext(PancakeComment.TIMEDOUT);
-            UnityEngine.Debug.Log("a");
-        }
-        else
-            comment.OnNext(commentEvent);
+        lifePoint.SetPrevLife();
+        comment.OnNext(commentEvent);
 
         //パンケーキ作成
         _pancakeMaker.PancakeMake();

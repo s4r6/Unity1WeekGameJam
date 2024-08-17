@@ -15,6 +15,9 @@ public class LifePoint : MonoBehaviour
     ReactiveProperty<float> life = new FloatReactiveProperty();
     public IReactiveProperty<float> lifeProperty => life;
 
+    Subject<Unit> TimedOutEvent = new Subject<Unit>();
+    public ISubject<Unit> OnTimeOut => TimedOutEvent;
+
     [SerializeField]
     float DecreaseValuePerSec = 0.005f;
     float DecreaseRate = 1;
@@ -36,6 +39,11 @@ public class LifePoint : MonoBehaviour
             var ms_DecreaseTime = TranslateSecondToMs(DecreaseRate);
             await UniTask.Delay(ms_DecreaseTime, cancellationToken: cancellationToken);
             SubtractLife(DecreaseValuePerSec);
+            if(life.Value - prevLife <= -1)
+            {
+                TimedOutEvent.OnNext(default);
+                SetPrevLife();
+            }
             Debug.Log(life.Value);
         }
     }
