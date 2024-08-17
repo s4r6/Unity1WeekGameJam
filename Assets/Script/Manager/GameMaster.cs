@@ -51,7 +51,6 @@ public class GameMaster : MonoBehaviour
         lifePoint.OnTimeOut
             .Subscribe(_ =>
             {
-                UnityEngine.Debug.Log("timeout");
                 comment.OnNext(PancakeComment.TIMEDOUT);
             }).AddTo(this);
 
@@ -73,14 +72,14 @@ public class GameMaster : MonoBehaviour
     void Update()
     {
         //デバッグ用
-        if (Input.GetKeyDown(KeyCode.O))    //"O"キーが押されると焦げた
+        /*if (Input.GetKeyDown(KeyCode.O))    //"O"キーが押されると焦げた
             PancakeComplete(PancakeFlag.BURNT);
         if (Input.GetKeyDown(KeyCode.I))    //"I"が押されると完璧
             PancakeComplete(PancakeFlag.PERFECT);
         if (Input.GetKeyDown(KeyCode.P))    //"P"キーが押されると落とした
             PancakeComplete(PancakeFlag.DROPED);
         if (Input.GetKeyDown(KeyCode.J))    //"J"が押されると焼けた
-            PancakeComplete(PancakeFlag.BAKED);
+            PancakeComplete(PancakeFlag.BAKED);*/
 
     }
 
@@ -115,26 +114,22 @@ public class GameMaster : MonoBehaviour
             case PancakeFlag.BURNT:
                 lifePoint.SubtractLife();
                 commentEvent = PancakeComment.BURNT;
-                //comment.OnNext(PancakeComment.BURNT);
                 break;
 
             case PancakeFlag.DROPED:
                 lifePoint.SubtractLife();
                 commentEvent = PancakeComment.DROPED;
-                //comment.OnNext(PancakeComment.DROPED);
                 break;
 
             case PancakeFlag.PERFECT:
                 lifePoint.AddLife();
                 successCount.AddSuccessCount();
                 commentEvent = PancakeComment.PERFECT;
-                //comment.OnNext(PancakeComment.PERFECT);
                 break;
 
             case PancakeFlag.BAKED:
                 successCount.AddSuccessCount();
                 commentEvent = PancakeComment.COMMON;
-                //comment.OnNext(PancakeComment.COMMON);
                 break;
         }
 

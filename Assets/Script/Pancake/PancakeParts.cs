@@ -28,7 +28,6 @@ public class PancakeParts : MonoBehaviour
             _burntSprite.color = new Color32(255, 255, 255, (byte)((_bakedDegree - 50f) * 2.41f));
             if (!_baked)
             {
-                Debug.Log("焼けた");
                 _baked = true;
                 _pancake.BakedCount();
 
@@ -37,7 +36,6 @@ public class PancakeParts : MonoBehaviour
         else {
             //焦げた後
             if (!_burnt) {
-                Debug.Log("焦げた");
                 _burnt = true;
                 _pancake.BurntCount();
                 _bakedSprite.color = new Color32(255, 255, 255, 255);
@@ -51,7 +49,6 @@ public class PancakeParts : MonoBehaviour
     }
 
     public void SetgameMaster(GameMaster gameMaster) {
-        Debug.Log(gameMaster);
         _gameMaster = gameMaster;
     }
 
@@ -69,11 +66,8 @@ public class PancakeParts : MonoBehaviour
     */
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("振れているTriger");
-        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.CompareTag("Flyingpan"))
         {
-            //Debug.Log(Time.deltaTime);
             _bakedDegree += _gameMaster.GetFire() * Time.deltaTime;//FixedUpdateなのでTime/Deltatimeは不要だけどこれがあるとフレーム換算しなくて済むので追加
         }
 
