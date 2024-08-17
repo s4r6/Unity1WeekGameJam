@@ -32,7 +32,6 @@ public class ToppingViewer : MonoBehaviour
                 nextToppingImage.sprite = toppingImageList[5];
                 break;
             default:
-                Debug.Log("対応したトッピングがありません。");
                 break;
         }
     }

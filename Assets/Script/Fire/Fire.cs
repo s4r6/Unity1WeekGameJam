@@ -27,16 +27,15 @@ public class Fire : MonoBehaviour
         if (_gameMaster != null)
         {
             float firePower = _gameMaster.GetFire();
-            Debug.Log("Current FirePower: " + firePower);
         }
 
         // デバッグ用
-        if (Input.GetKey(KeyCode.A)){
+        /*if (Input.GetKey(KeyCode.A)){
             firePower = 0.8f;
         }
         if (Input.GetKey(KeyCode.S)){
             firePower = 1.5f;
-        }
+        }*/
 
         // サイズが変更された場合にのみChangeFireを呼び出す
         if (transform.localScale.x != firePower * _initialScale.x) {

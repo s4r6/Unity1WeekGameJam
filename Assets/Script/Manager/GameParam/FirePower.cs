@@ -28,7 +28,6 @@ public class FirePower : MonoBehaviour
     public async UniTask StartPowerUp(CancellationToken cancellationToken)
     {
         
-        Debug.Log("火力アップ開始");
         while(true)
         {
             var ms_Interval = TranslateSecondToMs(s_firePowerUpInterval);
@@ -45,10 +44,8 @@ public class FirePower : MonoBehaviour
 
     void IncreaseFirePower(float increaseValue)
     {
-        Debug.Log("火力アップ");
         if (increaseValue <= 0)
             throw new ArgumentOutOfRangeException("引数は正の整数でなくてはいけません.");
         fire.Value += increaseValue;
-        Debug.Log("現在の火力:" + fire.Value);
     }
 }

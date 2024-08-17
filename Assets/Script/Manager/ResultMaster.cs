@@ -12,14 +12,8 @@ public class ResultMaster : MonoBehaviour
     float time;
     int success;
 
-    void Awake()
-    {
-        Debug.Log("Awake:" + time);    
-    }
-
     void Start()
     {
-        Debug.Log("Start:" + time);
         timeText.text = "Time:" + time;
         successText.text = "SuccessNum:" + success;
     }
