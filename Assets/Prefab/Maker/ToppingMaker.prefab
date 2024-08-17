@@ -46,5 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blueberryPrefab: {fileID: 6727539728917903872, guid: 5ef7c53c1bb1b7641a3faf36e584df31, type: 3}
   strawberryPrefab: {fileID: 53793325112495544, guid: 3666eebd1ef38cc4c90185fc63e5a652, type: 3}
+  bananaPrefab: {fileID: 53793325112495544, guid: b3c119b375644f74b81acae991509693, type: 3}
+  chocolatePrefab: {fileID: 53793325112495544, guid: a8a1743eae27c6643a1ac10455c8df1a, type: 3}
+  nutsPrefab: {fileID: 53793325112495544, guid: 29d8edc8cc7029f4fad9ce89dfd040ea, type: 3}
+  butterPrefab: {fileID: 53793325112495544, guid: e1fed34a57d813343bd280b6315f8fdd, type: 3}
   _dropPosition: {x: -1.5, y: 7, z: 0}
   _FlyingPan: {fileID: 0}
