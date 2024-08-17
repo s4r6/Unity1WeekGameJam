@@ -9,7 +9,6 @@ public class ToppingViewer : MonoBehaviour
     [SerializeField] private Sprite[] toppingImageList;
 
     [SerializeField] private Image nextToppingImage;
-
     public void SetNextToppingImage(ToppingList nextToppingList)
     {
         switch (nextToppingList)
@@ -19,6 +18,18 @@ public class ToppingViewer : MonoBehaviour
                 break;
             case ToppingList.strawberry:
                 nextToppingImage.sprite = toppingImageList[1];
+                break;
+            case ToppingList.banana:
+                nextToppingImage.sprite = toppingImageList[2];
+                break;
+            case ToppingList.chocolate:
+                nextToppingImage.sprite = toppingImageList[3];
+                break;
+            case ToppingList.nuts:
+                nextToppingImage.sprite = toppingImageList[4];
+                break;
+            case ToppingList.butter:
+                nextToppingImage.sprite = toppingImageList[5];
                 break;
             default:
                 Debug.Log("対応したトッピングがありません。");
