@@ -15,6 +15,8 @@ public class Pancake : MonoBehaviour
 
     private bool InjectComplete = false;
 
+    private bool _droped;
+
     /*private void Start()
     {
         foreach (var part in _pancakeParts)
@@ -73,5 +75,17 @@ public class Pancake : MonoBehaviour
     public void BurntCount()
     {
         _burntNum += 1;
+    }
+
+    /// <summary>
+    /// —Ž‰º‚µ‚½‚Æ”FŽ¯
+    /// </summary>
+    public void Drop() {
+        
+        if (!_droped) {
+            _gameMaster.PancakeComplete(PancakeFlag.DROPED);
+            Destroy(this.gameObject);
+            _droped = true;
+        }
     }
 }

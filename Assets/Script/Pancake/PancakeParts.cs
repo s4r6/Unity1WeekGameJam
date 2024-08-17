@@ -8,6 +8,7 @@ public class PancakeParts : MonoBehaviour
     private GameMaster _gameMaster;
     [SerializeField] private Pancake _pancake;
     [SerializeField] private float _bakedDegree;
+    [SerializeField][Tooltip("‚±‚Ì’l‚æ‚è‰º‚ÌyÀ•W‚É‚Ä—‚¿‚½‚Æ”»’è‚ğ‚·‚é")] private float _dropAreaY;
     private bool _baked;
     private bool _burnt;
 
@@ -34,6 +35,10 @@ public class PancakeParts : MonoBehaviour
                 _burnt = true;
                 _pancake.BurntCount();
             }
+        }
+
+        if (this.transform.position.y < _dropAreaY) {
+            _pancake.Drop();
         }
     }
 
