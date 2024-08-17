@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum PancakeComment
 {
+    NONE,   //‰½‚א‚ָ‚µ
     COMMON, //‚Ü‚ ‚Ü‚ ‚ּo—ˆ
     PERFECT,    //®אר
     BURNT,  //ֵ‚°‚½

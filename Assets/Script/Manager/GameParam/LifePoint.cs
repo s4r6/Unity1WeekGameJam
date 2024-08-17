@@ -19,8 +19,12 @@ public class LifePoint : MonoBehaviour
     float DecreaseValuePerSec = 0.005f;
     float DecreaseRate = 1;
 
+    float prevLife = 0;
+
     void  Start()
     {
+        prevLife = life.Value;
+
         StartLifeDecrease(this.GetCancellationTokenOnDestroy()).Forget();
     }
 
@@ -58,5 +62,17 @@ public class LifePoint : MonoBehaviour
         life.Value += plus;
         if (life.Value > MAXLIFE)
             life.Value = MAXLIFE;
+    }
+
+    public void SetPrevLife()
+    {
+        prevLife = life.Value;
+    }
+
+    public float CalcLifeDifference()   //Œ»İ‚Ì‘Ì—Í‚Æ‘O‰ñ‚Ì‘Ì—Í‚Ì·‚ğ•Ô‚·
+    {
+        var returnValue = life.Value - prevLife;
+        prevLife = life.Value;
+        return returnValue;
     }
 }
