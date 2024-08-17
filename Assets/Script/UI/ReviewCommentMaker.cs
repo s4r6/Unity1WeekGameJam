@@ -6,7 +6,7 @@ using System.IO;
 using Unity.VisualScripting;
 using Random = UnityEngine.Random;
 
-//‚±‚ÌƒR[ƒh‚ÍƒfƒoƒbƒO—p‚ÌƒR[ƒh‚Å‚ ‚éB
+//ï¿½ï¿½ï¿½ÌƒRï¿½[ï¿½hï¿½Íƒfï¿½oï¿½bï¿½Oï¿½pï¿½ÌƒRï¿½[ï¿½hï¿½Å‚ï¿½ï¿½ï¿½B
 public class ReviewCommentMaker : MonoBehaviour
 {
     [SerializeField] private ReviewCommentViewer reviewCommentViewer;
@@ -16,23 +16,23 @@ public class ReviewCommentMaker : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            reviewCommentViewer.ShowComment(1.4f);
+            reviewCommentViewer.ShowComment(PancakeComment.COMMON);
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            reviewCommentViewer.ShowComment(2.5f);
+            reviewCommentViewer.ShowComment(PancakeComment.PERFECT);
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            reviewCommentViewer.ShowComment(3.12f);
+            reviewCommentViewer.ShowComment(PancakeComment.BURNT);
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            reviewCommentViewer.ShowComment(4.44f);
+            reviewCommentViewer.ShowComment(PancakeComment.DROPED);
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            reviewCommentViewer.ShowComment(5);
+            reviewCommentViewer.ShowComment(PancakeComment.TIMEDOUT);
         }
     }
     
