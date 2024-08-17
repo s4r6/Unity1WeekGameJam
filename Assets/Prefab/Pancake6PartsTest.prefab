@@ -2079,7 +2079,7 @@ GameObject:
   - component: {fileID: 3411725688378098938}
   - component: {fileID: 2276381488472132356}
   m_Layer: 6
-  m_Name: Pancake6
+  m_Name: Pancake6PartsTest
   m_TagString: Pancake
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1405,6 +1405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8896491092788010455}
   - component: {fileID: 8896491092788010454}
+  - component: {fileID: -5376187611381033818}
   m_Layer: 0
   m_Name: Pancake5
   m_TagString: Untagged
@@ -1455,6 +1456,19 @@ MonoBehaviour:
   - {fileID: 8896491091238477701}
   - {fileID: 8896491091581314746}
   - {fileID: 8896491093170876693}
+--- !u!114 &-5376187611381033818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8896491092788010449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 717a02054ef2699498e6bd4234fd7995, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _containerSource: 2
 --- !u!1 &8896491092823417227
 GameObject:
   m_ObjectHideFlags: 0
