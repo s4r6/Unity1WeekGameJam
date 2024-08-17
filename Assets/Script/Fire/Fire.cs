@@ -7,7 +7,7 @@ public class Fire : MonoBehaviour
     public float rotationAmount = 5f; // 揺れの角度
     public float speed = 5f; // 揺れの速さ
     public float sizeChangeSpeed = 2f;
-    public float fireSize = 1f;
+    public float firePower = 1f;
     private GameMaster _gameMaster;
     private float _randomOffset;
     private Vector3 _initialScale;
@@ -35,7 +35,7 @@ public class Fire : MonoBehaviour
             firePower = 0.8f;
         }
         if (Input.GetKey(KeyCode.S)){
-            firePowerd = 1.5f;
+            firePower = 1.5f;
         }
 
         // サイズが変更された場合にのみChangeFireを呼び出す
