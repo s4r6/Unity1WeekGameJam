@@ -3,6 +3,7 @@ using UniRx;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 using Zenject;
+using System.Diagnostics;
 
 public class GameMaster : MonoBehaviour
 {
@@ -68,7 +69,6 @@ public class GameMaster : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.J))    //"J"が押されると焼けた
             PancakeComplete(PancakeFlag.BAKED);
 
-
     }
 
     //シーン遷移時の後処理
@@ -95,34 +95,47 @@ public class GameMaster : MonoBehaviour
     //-------------------//
     public void PancakeComplete(PancakeFlag flag)
     {
+        PancakeComment commentEvent = PancakeComment.NONE;
+
         switch(flag)
         {
             case PancakeFlag.BURNT:
                 lifePoint.SubtractLife();
-                comment.OnNext(PancakeComment.BURNT);
+                commentEvent = PancakeComment.BURNT;
+                //comment.OnNext(PancakeComment.BURNT);
                 break;
 
             case PancakeFlag.DROPED:
                 lifePoint.SubtractLife();
-                comment.OnNext(PancakeComment.DROPED);
+                commentEvent = PancakeComment.DROPED;
+                //comment.OnNext(PancakeComment.DROPED);
                 break;
 
             case PancakeFlag.PERFECT:
                 lifePoint.AddLife();
                 successCount.AddSuccessCount();
-                comment.OnNext(PancakeComment.PERFECT);
+                commentEvent = PancakeComment.PERFECT;
+                //comment.OnNext(PancakeComment.PERFECT);
                 break;
 
             case PancakeFlag.BAKED:
                 successCount.AddSuccessCount();
-                comment.OnNext(PancakeComment.COMMON);
+                commentEvent = PancakeComment.COMMON;
+                //comment.OnNext(PancakeComment.COMMON);
                 break;
         }
+
+        if (lifePoint.CalcLifeDifference() <= -1)
+        {
+            comment.OnNext(PancakeComment.TIMEDOUT);
+            UnityEngine.Debug.Log("a");
+        }
+        else
+            comment.OnNext(commentEvent);
 
         //パンケーキ作成
         _pancakeMaker.PancakeMake();
         //トッピング作成
-        //nextTopping.Value = (ToppingList)Random.Range(1, 2);
         _toppingMaker.ToppingMake();
     }
 
