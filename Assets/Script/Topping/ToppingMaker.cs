@@ -11,6 +11,8 @@ public class ToppingMaker : MonoBehaviour
     ReactiveProperty<ToppingList> nextTopping = new ReactiveProperty<ToppingList>();
     public IReactiveProperty<ToppingList> OnChangeNextTopping => nextTopping;
 
+    [SerializeField][Tooltip("フライパンからの相対位置")] private Vector3 _dropPosition;
+    [SerializeField] private GameObject _FlyingPan;
 
     void Start()
     {
@@ -31,7 +33,7 @@ public class ToppingMaker : MonoBehaviour
 
         //プレハブが設定されている場合、ゲーム上に生成
         if (toppingPrefab != null){
-            Instantiate(toppingPrefab, transform.position, Quaternion.identity);
+            Instantiate(toppingPrefab, _FlyingPan.transform.position + _dropPosition, Quaternion.identity);
             nextTopping.Value = SelectTopping();    //次のトッピングを抽選
         }
     }
