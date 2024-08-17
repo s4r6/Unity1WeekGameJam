@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 4241104103553694820}
   - component: {fileID: 4856654248553179991}
   - component: {fileID: 5778142514595493822}
-  - component: {fileID: 6515057801922263803}
-  - component: {fileID: 859479406282486404}
+  - component: {fileID: -2299418926448290063}
   m_Layer: 0
-  m_Name: Strawberry
+  m_Name: Nuts_NOCOLLIDER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: 09b6e201ecaefff4d83b3e20c4685b02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b39a88e82f3e6ff4c986aac7f4562c90, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,48 +107,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &6515057801922263803
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 53793325112495544}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 1.1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.3682021, y: -0.15156282}
-      - {x: 0.10353958, y: 0.38366315}
-      - {x: 0.046584167, y: 0.46683154}
-      - {x: -0.056584165, y: 0.45695528}
-      - {x: -0.09024738, y: 0.4102473}
-      - {x: -0.32663924, y: -0.041562825}
-      - {x: -0.39265576, y: -0.17999999}
-      - {x: -0.4131667, y: -0.27841973}
-      - {x: -0.38398352, y: -0.38554633}
-      - {x: -0.28109288, y: -0.47663927}
-      - {x: -0.13015287, y: -0.5126556}
-      - {x: 0.12286234, y: -0.50618684}
-      - {x: 0.2380493, y: -0.4953115}
-      - {x: 0.2924207, y: -0.4582021}
-      - {x: 0.36976492, y: -0.3953115}
-      - {x: 0.39710927, y: -0.2801528}
---- !u!114 &859479406282486404
+--- !u!114 &-2299418926448290063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

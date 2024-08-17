@@ -6,5 +6,9 @@ public enum ToppingList
 {
    none,
    blueberry,
-   strawberry
+   strawberry,
+   banana,
+   chocolate,
+   nuts,
+   butter
 }

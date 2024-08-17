@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4856654248553179991}
   - component: {fileID: 5778142514595493822}
   - component: {fileID: 6515057801922263803}
-  - component: {fileID: 859479406282486404}
+  - component: {fileID: 338417220055207700}
   m_Layer: 0
-  m_Name: Strawberry
+  m_Name: Banana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: 09b6e201ecaefff4d83b3e20c4685b02, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cf6815072fd3e224db9489a779bc30d3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,7 +125,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 1.1}
+    oldSize: {x: 0.61, y: 0.73}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -133,23 +133,19 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.3682021, y: -0.15156282}
-      - {x: 0.10353958, y: 0.38366315}
-      - {x: 0.046584167, y: 0.46683154}
-      - {x: -0.056584165, y: 0.45695528}
-      - {x: -0.09024738, y: 0.4102473}
-      - {x: -0.32663924, y: -0.041562825}
-      - {x: -0.39265576, y: -0.17999999}
-      - {x: -0.4131667, y: -0.27841973}
-      - {x: -0.38398352, y: -0.38554633}
-      - {x: -0.28109288, y: -0.47663927}
-      - {x: -0.13015287, y: -0.5126556}
-      - {x: 0.12286234, y: -0.50618684}
-      - {x: 0.2380493, y: -0.4953115}
-      - {x: 0.2924207, y: -0.4582021}
-      - {x: 0.36976492, y: -0.3953115}
-      - {x: 0.39710927, y: -0.2801528}
---- !u!114 &859479406282486404
+    - - {x: 0.19072485, y: -0.05918908}
+      - {x: 0.19840324, y: 0.08022772}
+      - {x: 0.1306107, y: 0.23892331}
+      - {x: 0.09983479, y: 0.26760587}
+      - {x: -0.04393576, y: 0.28427956}
+      - {x: -0.1072557, y: 0.232898}
+      - {x: -0.13475418, y: 0.14201307}
+      - {x: -0.14403772, y: -0.12531924}
+      - {x: -0.08780448, y: -0.25304163}
+      - {x: -0.025258541, y: -0.2918942}
+      - {x: 0.077534735, y: -0.29148027}
+      - {x: 0.17045593, y: -0.1750381}
+--- !u!114 &338417220055207700
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
