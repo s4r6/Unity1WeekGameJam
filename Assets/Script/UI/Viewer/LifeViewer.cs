@@ -44,7 +44,7 @@ public class LifeViewer : MonoBehaviour
         }
         if (onePlaceHP >= 0) {
             //少数部分のスライダーを調整する
-            lifeSliders[onePlaceHP].padding = new Vector4(0, 0, 0, 100 - (100 * decimalHP));
+            lifeSliders[onePlaceHP].padding = new Vector4(0, 0, 0, 36 - (36 * decimalHP));
         }       
     }
 }

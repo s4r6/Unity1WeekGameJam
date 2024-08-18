@@ -660,6 +660,10 @@ PrefabInstance:
       propertyPath: speed
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: -1810582668644795511, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
+      propertyPath: FirePowerLimit
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 4503796377630604300, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -731,6 +735,10 @@ PrefabInstance:
     - target: {fileID: -1810582668644795511, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
       propertyPath: speed
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -1810582668644795511, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
+      propertyPath: FirePowerLimit
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4503796377630604300, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
       propertyPath: m_RootOrder
@@ -1100,6 +1108,10 @@ PrefabInstance:
       propertyPath: speed
       value: 30
       objectReference: {fileID: 0}
+    - target: {fileID: -1810582668644795511, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
+      propertyPath: FirePowerLimit
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 4503796377630604300, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -1160,6 +1172,10 @@ PrefabInstance:
     - target: {fileID: -1810582668644795511, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
       propertyPath: speed
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -1810582668644795511, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
+      propertyPath: FirePowerLimit
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4503796377630604300, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
       propertyPath: m_RootOrder
@@ -1378,6 +1394,10 @@ PrefabInstance:
     - target: {fileID: -1810582668644795511, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
       propertyPath: speed
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: -1810582668644795511, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
+      propertyPath: FirePowerLimit
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4503796377630604300, guid: ee75f364c85cb465fb7fb3e637e24b82, type: 3}
       propertyPath: m_RootOrder
@@ -1933,6 +1953,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7497054583229684588, guid: 35bb58da5c0afb04f8d74c8e8406265f, type: 3}
+      propertyPath: m_Padding.w
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7497054583229684589, guid: 35bb58da5c0afb04f8d74c8e8406265f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
