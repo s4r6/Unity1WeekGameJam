@@ -15,16 +15,16 @@ public class ResultSE : MonoBehaviour
     public AudioClip gyoretsuSound;
     public AudioClip densetsuSound;
     private AudioSource _audioSource;
-    private GameMaster _gameMaster;
+    private ResultMaster _resultMaster;
     void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
-        _gameMaster = FindObjectOfType<GameMaster>();
+        _resultMaster = FindObjectOfType<ResultMaster>();
     }
 
     void Start()
     {
-        float Timer = _gameMaster.GetTimeProperty().Value;
+        float Timer = _resultMaster.time;
 
         if(Timer > densetsu){
             _audioSource.PlayOneShot(densetsuSound);
