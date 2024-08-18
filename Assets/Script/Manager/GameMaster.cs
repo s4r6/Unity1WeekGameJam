@@ -122,7 +122,7 @@ public class GameMaster : MonoBehaviour
                 break;
 
             case PancakeFlag.PERFECT:
-                lifePoint.AddLife();
+                lifePoint.AddLifePropotionFire(firepower.fireProperty.Value);
                 successCount.AddSuccessCount();
                 commentEvent = PancakeComment.PERFECT;
                 break;
