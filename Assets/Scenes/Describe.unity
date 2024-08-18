@@ -159,10 +159,10 @@ RectTransform:
   m_Father: {fileID: 579560407}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -30, y: 30}
-  m_SizeDelta: {x: 150, y: 83}
+  m_AnchorMin: {x: 0.81100005, y: 0.055703707}
+  m_AnchorMax: {x: 0.97300005, y: 0.2052963}
+  m_AnchoredPosition: {x: -4, y: 0}
+  m_SizeDelta: {x: -7, y: 2}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &466946642
 MonoBehaviour:
@@ -492,10 +492,10 @@ RectTransform:
   m_Father: {fileID: 579560407}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 30, y: 30}
-  m_SizeDelta: {x: 150, y: 83}
+  m_AnchorMin: {x: 0.03325, y: 0.055703707}
+  m_AnchorMax: {x: 0.18758333, y: 0.2052963}
+  m_AnchoredPosition: {x: -2, y: 0}
+  m_SizeDelta: {x: 1, y: 2}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &776595103
 MonoBehaviour:
@@ -871,10 +871,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 960, y: 540}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
