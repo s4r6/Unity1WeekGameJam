@@ -90,7 +90,7 @@ public void ToppingMake(){
                 break;
             case ToppingList.nuts:
                 toppingPrefab = nutsPrefab;
-                _toppingNum = 1 +(int)(_gameMaster.GetTimeProperty().Value / 200);
+                _toppingNum = 1 +(int)(_gameMaster.GetTimeProperty().Value / 500);
                 break;
             case ToppingList.butter:
                 toppingPrefab = butterPrefab;
