@@ -71,6 +71,14 @@ public class LifePoint : MonoBehaviour
             life.Value = MAXLIFE;
     }
 
+    public void AddLifePropotionFire(float firepower) {
+        if (firepower <= 0)
+            throw new ArgumentOutOfRangeException("ˆø”‚Í³‚Ì®”‚Å‚È‚­‚Ä‚Í‚¢‚¯‚Ü‚¹‚ñ.");
+        life.Value += (50 / firepower) * 4 * DecreaseValuePerSec;
+        if (life.Value > MAXLIFE)
+            life.Value = MAXLIFE;
+    }
+
     public void SetPrevLife()
     {
         prevLife = life.Value;
