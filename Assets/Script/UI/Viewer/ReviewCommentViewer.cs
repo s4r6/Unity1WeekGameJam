@@ -17,6 +17,7 @@ public class ReviewCommentViewer : MonoBehaviour
     [SerializeField] private CanvasGroup commentCanvasGroup;
     //[SerializeField] private TextMeshProUGUI starText;
     [SerializeField] private TextMeshProUGUI commentText;
+    [SerializeField] private TextMeshProUGUI starText;
 
     private RectTransform canvasRectTransform;
     private void Start()
@@ -43,7 +44,35 @@ public class ReviewCommentViewer : MonoBehaviour
         
         int randomNum = Random.Range(0, reviewCommnets.Count);
         commentText.text = reviewCommnets[randomNum][1];
+
+        starText.text = "星:" + RandomGetStar(pancakeComment).ToString("N1");
+
         CommentMove();
+    }
+
+    private float RandomGetStar(PancakeComment comment)
+    {
+        float starValue = 0;
+        switch(comment)
+        {
+            case PancakeComment.BURNT:
+                starValue = UnityEngine.Random.Range(1f, 2f);
+                break;
+            case PancakeComment.PERFECT:
+                starValue = UnityEngine.Random.Range(4.1f, 5f);
+                break;
+            case PancakeComment.DROPED:
+                starValue = UnityEngine.Random.Range(1f, 2f);
+                break;
+            case PancakeComment.COMMON:
+                starValue = UnityEngine.Random.Range(3.1f, 4f);
+                break;
+            case PancakeComment.TIMEDOUT:
+                starValue = UnityEngine.Random.Range(1f, 2f);
+                break;
+        }
+
+        return starValue;
     }
     
    //ポップアウトにコメントを動かす関数
