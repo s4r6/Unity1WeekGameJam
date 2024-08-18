@@ -122,8 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f7febe10d9762479acb184888a3193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxPower: 100
-  _chargePowerSpeed: 100
+  _maxPower: 150
+  _chargePowerSpeed: 150
   _myRB2D: {fileID: 1540048131459880925}
 --- !u!60 &3003868015458764190
 PolygonCollider2D:
