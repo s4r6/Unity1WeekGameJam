@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
+using System.Diagnostics;
 
 public class Fire : MonoBehaviour
 {
@@ -8,7 +10,10 @@ public class Fire : MonoBehaviour
     public float speed = 5f; // 揺れの速さ
     public float sizeChangeSpeed = 2f;
     public float firePower = 1f;
+    [SerializeField]
     private GameMaster _gameMaster;
+    [SerializeField]
+    float FirePowerLimit = 8;
     private float _randomOffset;
     private Vector3 _initialScale;
     private Vector3 _targetScale;
@@ -25,8 +30,8 @@ public class Fire : MonoBehaviour
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
 
         if (_gameMaster != null)
-        {
-            float firePower = _gameMaster.GetFire();
+        { 
+            firePower = _gameMaster.GetFire();
         }
 
         // デバッグ用
@@ -41,10 +46,12 @@ public class Fire : MonoBehaviour
         if (transform.localScale.x != firePower * _initialScale.x) {
             ChangeFire(firePower);
         }
+
     }
 
     public void ChangeFire(float firePower){
-        _targetScale = _initialScale * firePower;
+        
+        _targetScale = _initialScale * firePower / FirePowerLimit;
         transform.localScale = Vector3.Lerp(transform.localScale, _targetScale, Time.deltaTime * sizeChangeSpeed);
     }
 }
