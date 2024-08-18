@@ -65,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life:
     value: 3
-  DecreaseValuePerSec: 0.05
+  DecreaseValuePerSec: 0.01
 --- !u!114 &2877434358963591425
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -134,6 +134,7 @@ public class GameMaster : MonoBehaviour
         }
 
         lifePoint.SetPrevLife();
+        lifePoint.PancakeComplete();
         comment.OnNext(commentEvent);
 
         //パンケーキ作成
