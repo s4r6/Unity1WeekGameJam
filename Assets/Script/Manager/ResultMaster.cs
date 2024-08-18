@@ -1,20 +1,22 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Diagnostics;
 
 public class ResultMaster : MonoBehaviour
 {
     [SerializeField]
     Text timeText;
     [SerializeField]
-    Text successText; 
+    Text successText;
 
-    float time;
-    int success;
+    public float time { get; private set; }
+    public int success { get; private set; }
 
     void Start()
     {
-        timeText.text = "Time:" + time;
+        TranslateTime();
+        //timeText.text = "Time:" + time;
         successText.text = "SuccessNum:" + success;
     }
 
@@ -29,5 +31,14 @@ public class ResultMaster : MonoBehaviour
     {
         time = _time;
         success = _success;
+    }
+
+    private void TranslateTime()
+    {
+        int hour = (int)time / 60;
+        UnityEngine.Debug.Log(hour);
+        int minute = (int)time % 60;
+        UnityEngine.Debug.Log(minute);
+        timeText.text = hour + ":" +  minute;
     }
 }
