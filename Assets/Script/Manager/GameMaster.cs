@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using Zenject;
 using System.Diagnostics;
 using System.Threading;
-using Cysharp.Threading.Tasks;
+
 public class GameMaster : MonoBehaviour
 {
     [SerializeField]

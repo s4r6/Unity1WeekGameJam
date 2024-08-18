@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UniRx;
 
 public class InGameSE : MonoBehaviour
 {
@@ -10,12 +11,12 @@ public class InGameSE : MonoBehaviour
     public AudioClip bakedSound;
 
     private AudioSource _audioSource;
+    [SerializeField]
     private GameMaster _gameMaster;
 
     void Awake()
     {
         _audioSource = GetComponent<AudioSource>();
-        _gameMaster = FindObjectOfType<GameMaster>();
     }
 
     void Start()
@@ -26,16 +27,16 @@ public class InGameSE : MonoBehaviour
                 switch(pancakeComment)
                 {
                     case PancakeComment.BURNT:
-                        audioSource.PlayOneShot(burntSound);
+                        _audioSource.PlayOneShot(burntSound);
                         break;
                     case PancakeComment.DROPED:
-                        audioSource.PlayOneShot(dropedSound);
+                        _audioSource.PlayOneShot(dropedSound);
                         break;
                     case PancakeComment.PERFECT:
-                        audioSource.PlayOneShot(perfectSound);
+                        _audioSource.PlayOneShot(perfectSound);
                         break;
-                    case PancakeComment.BAKED:
-                        audioSource.PlayOneShot(bakedSound);
+                    case PancakeComment.COMMON:
+                        _audioSource.PlayOneShot(bakedSound);
                         break;
                 }
                 
