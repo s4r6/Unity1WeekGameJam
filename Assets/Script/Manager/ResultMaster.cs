@@ -39,6 +39,6 @@ public class ResultMaster : MonoBehaviour
         UnityEngine.Debug.Log(hour);
         int minute = (int)time % 60;
         UnityEngine.Debug.Log(minute);
-        timeText.text = hour + ":" +  minute;
+        timeText.text = hour.ToString().PadLeft(2, '0') + ":" + minute.ToString().PadLeft(2, '0');
     }
 }
