@@ -24,12 +24,27 @@ public class LifePoint : MonoBehaviour
 
     float prevLife = 0;
 
-    void  Start()
+    private float lifeDecressSpeedUpTime;
+    private GameMaster _gameMaster;
+
+    void Start()
     {
         prevLife = life.Value;
 
         StartLifeDecrease(this.GetCancellationTokenOnDestroy()).Forget();
+        _gameMaster = GetComponent<GameMaster>();
+
     }
+
+    private void Update()
+    {
+        lifeDecressSpeedUpTime += Time.deltaTime;
+    }
+
+    public void PancakeComplete() { 
+        lifeDecressSpeedUpTime = 0;
+    }
+
 
     //指定時間ごとに体力減少
     public async UniTask StartLifeDecrease(CancellationToken cancellationToken)
@@ -38,8 +53,18 @@ public class LifePoint : MonoBehaviour
         {
             var ms_DecreaseTime = TranslateSecondToMs(DecreaseRate);
             await UniTask.Delay(ms_DecreaseTime, cancellationToken: cancellationToken);
-            SubtractLife(DecreaseValuePerSec);
-            if(life.Value - prevLife <= -1)
+            if (lifeDecressSpeedUpTime > (50 / _gameMaster.GetFire()) * 3) {
+                SubtractLife(DecreaseValuePerSec);//ライフ減少
+            } 
+            if (lifeDecressSpeedUpTime > (50 / _gameMaster.GetFire()) * 5) {
+                SubtractLife(DecreaseValuePerSec);//ライフ減少
+            }
+            if (lifeDecressSpeedUpTime > (50 / _gameMaster.GetFire()) * 6)
+            {
+                SubtractLife(DecreaseValuePerSec);//ライフ減少
+            }
+            SubtractLife(DecreaseValuePerSec);//ライフ減少
+            if (life.Value - prevLife <= -1)
             {
                 TimedOutEvent.OnNext(default);
                 SetPrevLife();
