@@ -1347,10 +1347,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117e190ad5d92416484ddc5964c48c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burntSound: {fileID: 8300000, guid: 658ab77ae0bbcf34ca7ab5694fa601f6, type: 3}
-  dropedSound: {fileID: 8300000, guid: 658ab77ae0bbcf34ca7ab5694fa601f6, type: 3}
-  perfectSound: {fileID: 8300000, guid: 658ab77ae0bbcf34ca7ab5694fa601f6, type: 3}
-  bakedSound: {fileID: 8300000, guid: 658ab77ae0bbcf34ca7ab5694fa601f6, type: 3}
+  burntSound: {fileID: 8300000, guid: ff7e6d4149f6a0749b82105da51ab890, type: 3}
+  dropedSound: {fileID: 8300000, guid: 79803f9c9f861264a8022cc894760138, type: 3}
+  perfectSound: {fileID: 8300000, guid: eda26752f9e7bd34d82d15452dd8a07e, type: 3}
+  bakedSound: {fileID: 8300000, guid: 12a67cd171cce934ea88a11510013db1, type: 3}
   _gameMaster: {fileID: 229697852}
 --- !u!1001 &1647783464
 PrefabInstance:
