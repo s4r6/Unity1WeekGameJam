@@ -50,6 +50,7 @@ MonoBehaviour:
   gameMode: Debug
   _pancakeMaker: {fileID: 0}
   _toppingMaker: {fileID: 0}
+  _startTime: 0
 --- !u!114 &2877434358963591430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,7 +65,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   life:
     value: 3
-  DecreaseValuePerSec: 0.005
+  DecreaseValuePerSec: 0.025
 --- !u!114 &2877434358963591425
 MonoBehaviour:
   m_ObjectHideFlags: 0
