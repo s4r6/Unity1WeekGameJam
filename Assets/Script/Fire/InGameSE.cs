@@ -20,11 +20,26 @@ public class InGameSE : MonoBehaviour
 
     void Start()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        _gameMaster.OnComment
+            .Subscribe(pancakeComment =>
+            {
+                switch(pancakeComment)
+                {
+                    case PancakeComment.BURNT:
+                        audioSource.PlayOneShot(burntSound);
+                        break;
+                    case PancakeComment.DROPED:
+                        audioSource.PlayOneShot(dropedSound);
+                        break;
+                    case PancakeComment.PERFECT:
+                        audioSource.PlayOneShot(perfectSound);
+                        break;
+                    case PancakeComment.BAKED:
+                        audioSource.PlayOneShot(bakedSound);
+                        break;
+                }
+                
+            })
+            .AddTo(this);
     }
 }
