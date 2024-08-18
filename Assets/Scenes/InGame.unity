@@ -621,6 +621,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2877434358963591431, guid: 834e2c89161f1be4e8e1538dc7d8280d, type: 3}
+      propertyPath: gameMode
+      value: Build
+      objectReference: {fileID: 0}
+    - target: {fileID: 2877434358963591431, guid: 834e2c89161f1be4e8e1538dc7d8280d, type: 3}
       propertyPath: _startTime
       value: 3
       objectReference: {fileID: 0}
@@ -1769,7 +1773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4336439062694548224, guid: 00ae2bf8c8a624ed38161cab9eeda7f7, type: 3}
       propertyPath: HmacKey
-      value: No
+      value: QRoV20zUDmuOb+yofwMOFYQafFGR3+3iHp36ziLZKGeExmWbMuOXhlPGTK064a7ahXYMS40TkVUsKBNX/Xiqow==
       objectReference: {fileID: 0}
     - target: {fileID: 5323818951622561360, guid: 00ae2bf8c8a624ed38161cab9eeda7f7, type: 3}
       propertyPath: m_Name
