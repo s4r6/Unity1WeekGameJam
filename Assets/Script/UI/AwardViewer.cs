@@ -40,6 +40,7 @@ public class AwardViewer : MonoBehaviour
         else if(master.time > 500) //500 < time 
         {
             //ƒŒƒWƒFƒ“ƒh
+            LegendAward.SetActive(true);
         }
     }
 
