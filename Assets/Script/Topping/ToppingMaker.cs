@@ -41,7 +41,7 @@ public class ToppingMaker : MonoBehaviour
 
         while (true)
         {
-            await UniTask.Delay(15 * 1000, cancellationToken: cancellationToken);
+            await UniTask.Delay(10 * 1000, cancellationToken: cancellationToken);
             if (_gameMaster.GetTimeProperty().Value > 200)
             {
                 if (toppingPrefab != null) {
@@ -49,12 +49,20 @@ public class ToppingMaker : MonoBehaviour
                 }
 
             }
-            await UniTask.Delay(15 * 1000, cancellationToken: cancellationToken);
-            if (_gameMaster.GetTimeProperty().Value > 300)
+            await UniTask.Delay(10 * 1000, cancellationToken: cancellationToken);
+            if (_gameMaster.GetTimeProperty().Value > 350)
             {
                 if (toppingPrefab != null)
                 {
                     Instantiate(toppingPrefab, _FlyingPan.transform.position + _dropPosition , Quaternion.identity);
+                }
+            }
+            await UniTask.Delay(10 * 1000, cancellationToken: cancellationToken);
+            if (_gameMaster.GetTimeProperty().Value > 500)
+            {
+                if (toppingPrefab != null)
+                {
+                    Instantiate(toppingPrefab, _FlyingPan.transform.position + _dropPosition, Quaternion.identity);
                 }
             }
         }
