@@ -74,7 +74,7 @@ public void ToppingMake(){
         switch (nextTopping.Value){
             case ToppingList.blueberry:
                 toppingPrefab = blueberryPrefab;
-                _toppingNum = 1 + (int)(_gameMaster.GetTimeProperty().Value / 60);
+                _toppingNum = 2 + (int)(_gameMaster.GetTimeProperty().Value / 60);
                 break;
             case ToppingList.strawberry:
                 toppingPrefab = strawberryPrefab;
@@ -110,7 +110,7 @@ public void ToppingMake(){
     //トッピングを指定範囲内で抽選
     private ToppingList SelectTopping() 
     {
-        var SelectedTopping = (ToppingList)Random.Range(1, 6);
+        var SelectedTopping = (ToppingList)Random.Range(1, 7);
         return SelectedTopping;
     }
 
