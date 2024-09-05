@@ -1,8 +1,8 @@
 # UnityRoomGameJam2024Summer
 2024年夏のUnityRoomgameJam用のリポジトリです
 
-・プログラマー兼企画
-1人
+・プログラマー兼企画\n
+1人\n
 ・プログラマー
 3人
 ・デザイナー
